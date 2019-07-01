@@ -124,7 +124,7 @@
   >
     <ul>
       <li class="nav-item sponsors">
-        <a>{{ lang === 'zh-CN' ? '赞助商' : 'Sponsors' }}</a>
+        <a>{{ lang === 'zh-CN' ? '赞助商se' : 'Sponsors' }}</a>
         <ul class="pure-menu-list sub-nav">
           <li
             class="nav-item"
@@ -307,8 +307,9 @@ export default {
       if (
         !target.nextElementSibling ||
         target.nextElementSibling.tagName !== 'UL'
-      )
+      ) {
         return;
+      }
       this.hideAllMenu();
       event.currentTarget.nextElementSibling.style.height = 'auto';
     }
