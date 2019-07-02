@@ -283,7 +283,7 @@
             <!-- logo -->
             <slot>
               <img
-                src="../assets/images/tuya.png"
+                src="../assets/images/logo2.png"
                 alt="element-logo"
                 class="nav-logo"
               >
