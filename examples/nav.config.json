@@ -26,7 +26,7 @@
       ]
     },
     {
-      "name": "组件",
+      "name": "原子组件",
       "groups": [
         {
           "groupName": "Basic",
@@ -271,6 +271,20 @@
             {
               "path": "/infiniteScroll",
               "title": "InfiniteScroll 无限滚动"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "业务组件",
+      "groups": [
+        {
+          "groupName": "公共组件",
+          "list": [
+            {
+              "path": "/layout",
+              "title": "搜索栏"
             }
           ]
         }
