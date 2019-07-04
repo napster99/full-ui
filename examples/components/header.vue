@@ -363,7 +363,7 @@
           </li> -->
 
           <!-- 语言选择器 -->
-          <li class="nav-item lang-item">
+          <!-- <li class="nav-item lang-item">
             <el-dropdown
               trigger="click"
               class="nav-dropdown nav-lang"
@@ -387,7 +387,7 @@
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-          </li>
+          </li> -->
         </ul>
       </div>
     </header>
@@ -414,10 +414,7 @@ export default {
       verDropdownVisible: true,
       langDropdownVisible: true,
       langs: {
-        'zh-CN': '中文',
-        'en-US': 'English',
-        es: 'Español',
-        'fr-FR': 'Français'
+        'zh-CN': '中文'
       }
     };
   },
