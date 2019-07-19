@@ -285,6 +285,10 @@
             {
               "path": "/napster",
               "title": "搜索栏"
+            },
+            {
+              "path": "/searchform",
+              "title": "Searchform"
             }
           ]
         }

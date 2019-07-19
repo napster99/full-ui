@@ -1,4 +1,4 @@
-export * from './element-ui'
+export * from './full-ui';
 
-import * as ElementUI from './element-ui'
-export default ElementUI
+import * as FullUI from './full-ui';
+export default FullUI;

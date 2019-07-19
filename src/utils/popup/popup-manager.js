@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { addClass, removeClass } from 'element-ui/src/utils/dom';
+import { addClass, removeClass } from 'full-ui/src/utils/dom';
 
 let hasModal = false;
 let hasInitZIndex = false;
@@ -168,7 +168,8 @@ Object.defineProperty(PopupManager, 'zIndex', {
 const getTopPopup = function() {
   if (Vue.prototype.$isServer) return;
   if (PopupManager.modalStack.length > 0) {
-    const topPopup = PopupManager.modalStack[PopupManager.modalStack.length - 1];
+    const topPopup =
+      PopupManager.modalStack[PopupManager.modalStack.length - 1];
     if (!topPopup) return;
     const instance = PopupManager.getInstance(topPopup.id);
 
@@ -185,7 +186,9 @@ if (!Vue.prototype.$isServer) {
       if (topPopup && topPopup.closeOnPressEscape) {
         topPopup.handleClose
           ? topPopup.handleClose()
-          : (topPopup.handleAction ? topPopup.handleAction('cancel') : topPopup.close());
+          : topPopup.handleAction
+            ? topPopup.handleAction('cancel')
+            : topPopup.close();
       }
     }
   });

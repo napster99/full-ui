@@ -1,6 +1,6 @@
 <script>
-import fecha from 'element-ui/src/utils/date';
-import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'element-ui/src/utils/date-util';
+import fecha from 'full-ui/src/utils/date';
+import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'full-ui/src/utils/date-util';
 
 const WEEK_DAYS = getI18nSettings().dayNames;
 export default {

@@ -1,4 +1,4 @@
-import { hasOwn } from 'element-ui/src/utils/util';
+import { hasOwn } from 'full-ui/src/utils/util';
 
 const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 /**
@@ -7,7 +7,6 @@ const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
  *    https://github.com/Matt-Esch/string-template/index.js
  */
 export default function(Vue) {
-
   /**
    * template
    *
@@ -28,8 +27,7 @@ export default function(Vue) {
     return string.replace(RE_NARGS, (match, prefix, i, index) => {
       let result;
 
-      if (string[index - 1] === '{' &&
-        string[index + match.length] === '}') {
+      if (string[index - 1] === '{' && string[index + match.length] === '}') {
         return i;
       } else {
         result = hasOwn(args, i) ? args[i] : null;

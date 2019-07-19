@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import debounce from 'throttle-debounce/debounce';
-import merge from 'element-ui/src/utils/merge';
+import merge from 'full-ui/src/utils/merge';
 import { getKeysMap, getRowIdentity, getColumnById, getColumnByKey, orderBy, toggleRowStatus } from '../util';
 import expand from './expand';
 import current from './current';

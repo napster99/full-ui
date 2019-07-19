@@ -1,20 +1,20 @@
 import Vue from 'vue';
-import { isString, isObject } from 'element-ui/src/utils/types';
+import { isString, isObject } from 'full-ui/src/utils/types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
-export function noop() {};
+export function noop() {}
 
 export function hasOwn(obj, key) {
   return hasOwnProperty.call(obj, key);
-};
+}
 
 function extend(to, _from) {
   for (let key in _from) {
     to[key] = _from[key];
   }
   return to;
-};
+}
 
 export function toObject(arr) {
   var res = {};
@@ -24,7 +24,7 @@ export function toObject(arr) {
     }
   }
   return res;
-};
+}
 
 export const getValueByPath = function(object, prop) {
   prop = prop || '';
@@ -68,7 +68,7 @@ export function getPropByPath(obj, path, strict) {
     k: keyArr[i],
     v: tempObj ? tempObj[keyArr[i]] : null
   };
-};
+}
 
 export const generateId = function() {
   return Math.floor(Math.random() * 10000);
@@ -86,7 +86,8 @@ export const valueEquals = (a, b) => {
   return true;
 };
 
-export const escapeRegexpString = (value = '') => String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+export const escapeRegexpString = (value = '') =>
+  String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
 
 // TODO: use native Array.find, Array.findIndex when IE support is dropped
 export const arrayFindIndex = function(arr, pred) {

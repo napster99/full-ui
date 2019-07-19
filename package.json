@@ -1,8 +1,8 @@
 {
-  "name": "@tuya-fe/element-ui",
-  "version": "2.10.0",
+  "name": "@tuya-fe/full-ui",
+  "version": "1.0.2",
   "description": "A Component Library for Vue.js.",
-  "main": "lib/element-ui.common.js",
+  "main": "lib/full-ui.common.js",
   "files": [
     "lib",
     "src",
@@ -17,7 +17,7 @@
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:umd": "node build/bin/build-locale.js",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
-    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js && echo element.eleme.io>>examples/element-ui/CNAME",
+    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js && echo element.eleme.io>>examples/full-ui/CNAME",
     "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js & node build/bin/template.js",
     "dev:play": "npm run build:file && cross-env NODE_ENV=development PLAY_ENV=true webpack-dev-server --config build/webpack.demo.js",
     "dist": "npm run clean && npm run build:file && npm run lint && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && npm run build:theme",
@@ -29,12 +29,12 @@
   },
   "faas": [
     {
-      "domain": "element",
-      "public": "temp_web/element"
+      "domain": "fullui",
+      "public": "temp_web/fullui"
     },
     {
-      "domain": "element-theme",
-      "public": "examples/element-ui",
+      "domain": "full-theme",
+      "public": "examples/full-ui",
       "build": [
         "yarn",
         "npm run deploy:build"
@@ -43,17 +43,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:ElemeFE/element.git"
+    "url": "git@code.registry.wgine.com:10023/TuyaFE-backendSupport/full-ui.git"
   },
-  "homepage": "http://element.eleme.io",
+  "homepage": "http://www.full-ui.com/",
   "keywords": [
-    "eleme",
+    "full",
     "vue",
     "components"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/element/issues"
+    "url": "https://code.registry.wgine.com/TuyaFE-backendSupport/full-ui/issues"
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
