@@ -1,6 +1,6 @@
 {
   "name": "@tuya-fe/full-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Component Library for Vue.js.",
   "main": "lib/full-ui.common.js",
   "files": [
@@ -58,6 +58,7 @@
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
   "dependencies": {
+    "@tuya-fe/full-ui": "^1.0.4",
     "async-validator": "~1.8.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
     "deepmerge": "^1.2.0",
