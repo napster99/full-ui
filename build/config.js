@@ -14,7 +14,7 @@ Object.keys(Components).forEach(function(key) {
   externals[`@tuya-fe/full-ui/packages/${key}`] = `full-ui/lib/${key}`;
 });
 
-externals['full-ui/src/locale'] = 'full-ui/lib/locale';
+externals['@tuya-fe/full-ui/src/locale'] = 'full-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[`@tuya-fe/full-ui/src/utils/${file}`] = `full-ui/lib/utils/${file}`;
