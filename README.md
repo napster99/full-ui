@@ -93,7 +93,7 @@ npm install @tuya-fe/full-ui -S
 
 ```javascript
 import Vue from 'vue'
-import Fullui from '@tuya-fe/full-ui'
+import Fullui from 'full-ui'
 
 Vue.use(Fullui)
 
@@ -102,7 +102,7 @@ import {
   Select,
   Button
   // ...
-} from '@tuya-fe/full-ui'
+} from 'full-ui'
 
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)

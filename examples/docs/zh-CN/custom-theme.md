@@ -26,7 +26,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 之后，在项目的入口文件中，直接引入以上样式文件即可（无需引入 Element 编译好的 CSS 文件）：
 ```JS
 import Vue from 'vue'
-import Element from '@tuya-fe/full-ui'
+import Element from 'full-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -104,7 +104,7 @@ et
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from '@tuya-fe/full-ui'
+import ElementUI from 'full-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
