@@ -1,4 +1,4 @@
-import { t } from 'full-ui/src/locale';
+import { t } from '@tuya-fe/full-ui/src/locale';
 
 export default {
   methods: {

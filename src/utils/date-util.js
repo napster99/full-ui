@@ -1,5 +1,5 @@
-import fecha from 'full-ui/src/utils/date';
-import { t } from 'full-ui/src/locale';
+import fecha from '@tuya-fe/full-ui/src/utils/date';
+import { t } from '@tuya-fe/full-ui/src/locale';
 
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const months = [

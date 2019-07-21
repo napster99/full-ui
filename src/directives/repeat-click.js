@@ -1,4 +1,4 @@
-import { once, on } from 'full-ui/src/utils/dom';
+import { once, on } from '@tuya-fe/full-ui/src/utils/dom';
 
 export default {
   bind(el, binding, vnode) {

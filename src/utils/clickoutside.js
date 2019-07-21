@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { on } from 'full-ui/src/utils/dom';
+import { on } from '@tuya-fe/full-ui/src/utils/dom';
 
 const nodeList = [];
 const ctx = '@@clickoutsideContext';

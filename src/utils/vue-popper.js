@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { PopupManager } from 'full-ui/src/utils/popup';
+import { PopupManager } from '@tuya-fe/full-ui/src/utils/popup';
 
 const PopperJS = Vue.prototype.$isServer ? function() {} : require('./popper');
 const stop = e => e.stopPropagation();

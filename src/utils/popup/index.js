@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import merge from 'full-ui/src/utils/merge';
-import PopupManager from 'full-ui/src/utils/popup/popup-manager';
+import merge from '@tuya-fe/full-ui/src/utils/merge';
+import PopupManager from '@tuya-fe/full-ui/src/utils/popup/popup-manager';
 import getScrollBarWidth from '../scrollbar-width';
 import { getStyle, addClass, removeClass, hasClass } from '../dom';
 

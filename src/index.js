@@ -81,8 +81,8 @@ import PageHeader from '../packages/page-header/index.js';
 import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Searchform from '../packages/searchform/index.js';
-import locale from '@tuya-fe/full-ui/src/locale';
-import CollapseTransition from '@tuya-fe/full-ui/src/transitions/collapse-transition';
+import locale from 'full-ui/src/locale';
+import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
 const components = [
   Pagination,
@@ -196,7 +196,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.5',
+  version: '1.0.6',
   locale: locale.use,
   i18n: locale.i18n,
   install,

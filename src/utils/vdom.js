@@ -1,4 +1,4 @@
-import { hasOwn } from 'full-ui/src/utils/util';
+import { hasOwn } from '@tuya-fe/full-ui/src/utils/util';
 
 export function isVNode(node) {
   return (
