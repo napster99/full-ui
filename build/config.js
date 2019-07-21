@@ -11,22 +11,24 @@ var transitionList = fs.readdirSync(
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`full-ui/packages/${key}`] = `full-ui/lib/${key}`;
+  externals[`@tuya-fe/full-ui/packages/${key}`] = `full-ui/lib/${key}`;
 });
 
 externals['full-ui/src/locale'] = 'full-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`full-ui/src/utils/${file}`] = `full-ui/lib/utils/${file}`;
+  externals[`@tuya-fe/full-ui/src/utils/${file}`] = `full-ui/lib/utils/${file}`;
 });
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`full-ui/src/mixins/${file}`] = `full-ui/lib/mixins/${file}`;
+  externals[
+    `@tuya-fe/full-ui/src/mixins/${file}`
+  ] = `full-ui/lib/mixins/${file}`;
 });
 transitionList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[
-    `full-ui/src/transitions/${file}`
+    `@tuya-fe/full-ui/src/transitions/${file}`
   ] = `full-ui/lib/transitions/${file}`;
 });
 
