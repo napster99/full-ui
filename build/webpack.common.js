@@ -12,10 +12,10 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
-    filename: 'element-ui.common.js',
+    filename: 'full-ui.common.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'ELEMENT',
+    library: 'FULLUI',
     libraryTarget: 'commonjs2'
   },
   resolve: {
@@ -64,8 +64,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new ProgressBarPlugin(),
-    new VueLoaderPlugin()
-  ]
+  plugins: [new ProgressBarPlugin(), new VueLoaderPlugin()]
 };

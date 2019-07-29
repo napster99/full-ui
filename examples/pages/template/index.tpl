@@ -55,11 +55,11 @@
       width: 100%;
     }
     .jumbotron-red {
-      transition: height .1s;
-      background: #FFF;
+      transition: height 0.1s;
+      background: #fff;
       position: absolute;
       left: 0;
-      top:0;
+      top: 0;
       overflow: hidden;
     }
   }
@@ -71,15 +71,15 @@
       padding: 0;
       margin: 0 -11px;
       width: auto;
-      &::before, &::after {
+      &::before,
+      &::after {
         display: table;
-        content: "";
+        content: '';
       }
       &::after {
         clear: both;
       }
     }
-
 
     li {
       width: 25%;
@@ -97,13 +97,13 @@
   .card {
     height: 430px;
     width: 100%;
-    background:#ffffff;
-    border:1px solid #eaeefb;
-    border-radius:5px;
+    background: #ffffff;
+    border: 1px solid #eaeefb;
+    border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
     position: relative;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     bottom: 0;
 
     img {
@@ -125,7 +125,7 @@
       height: 53px;
       line-height: 52px;
       font-size: 14px;
-      color: #409EFF;
+      color: #409eff;
       text-align: center;
       border: 0;
       border-top: 1px solid #eaeefb;
@@ -137,18 +137,18 @@
       left: 0;
       background-color: #fff;
       border-radius: 0 0 5px 5px;
-      transition: all .3s;
+      transition: all 0.3s;
       text-decoration: none;
       display: block;
 
       &:hover {
         color: #fff;
-        background: #409EFF;
+        background: #409eff;
       }
     }
     &:hover {
       bottom: 6px;
-      box-shadow: 0 6px 18px 0 rgba(232,237,250,0.50);
+      box-shadow: 0 6px 18px 0 rgba(232, 237, 250, 0.5);
     }
   }
   @media (max-width: 1140px) {
@@ -214,7 +214,7 @@
     bottom: 0;
     z-index: 200;
     .intro-banner {
-      position: absolute
+      position: absolute;
     }
     img {
       width: 300px;
@@ -225,7 +225,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      color: #FFF;
+      color: #fff;
       text-align: center;
       font-weight: bold;
       font-size: 20px;
@@ -245,14 +245,14 @@
     top: 0;
     bottom: 0;
     z-index: 200;
-    .mask{
+    .mask {
       position: fixed;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
       background: #000;
-      opacity: .5;
+      opacity: 0.5;
     }
     .intro-banner {
       top: 50%;
@@ -276,7 +276,7 @@
           margin: 0;
           font-size: 48px;
           font-weight: bold;
-          color: #FFF;
+          color: #fff;
         }
       }
     }
@@ -291,23 +291,43 @@
       </div>
     </div>
     <div class="jumbotron" ref="indexMainImg">
-      <img src="~examples/assets/images/theme-index-blue.png" alt="">
-      <div class="jumbotron-red" :style="{
+      <img src="~examples/assets/images/theme-index-blue.png" alt="" />
+      <div
+        class="jumbotron-red"
+        :style="{
            height: mainImgOffset + 'px'
-         }">
-        <img src="~examples/assets/images/theme-index-red.png" alt="">
+         }"
+      >
+        <img src="~examples/assets/images/theme-index-red.png" alt="" />
       </div>
     </div>
     <div class="sponsors">
-      <a class="sponsor" href="https://tipe.io/?ref=element" target="_blank" v-show="lang !== 'zh-CN'">
-        <img width="35px" src="~examples/assets/images/tipe.svg" alt="tipe.io">
+      <a
+        class="sponsor"
+        href="https://tipe.io/?ref=element"
+        target="_blank"
+        v-show="lang !== 'zh-CN'"
+      >
+        <img
+          width="35px"
+          src="~examples/assets/images/tipe.svg"
+          alt="tipe.io"
+        />
         <div>
           <p>Sponsored by Tipe.io</p>
           <p>Next Generation API-first CMS</p>
         </div>
       </a>
-      <a class="sponsor" href="https://www.duohui.cn/?utm_source=element&utm_medium=web&utm_campaign=element-index" target="_blank">
-        <img width="45px" src="~examples/assets/images/duohui.svg" alt="duohui">
+      <a
+        class="sponsor"
+        href="https://www.duohui.cn/?utm_source=element&utm_medium=web&utm_campaign=element-index"
+        target="_blank"
+      >
+        <img
+          width="45px"
+          src="~examples/assets/images/duohui.svg"
+          alt="duohui"
+        />
         <div>
           <p>Sponsored by 多会</p>
           <p>炫酷的新一代活动票务系统</p>
@@ -318,49 +338,47 @@
       <ul class="container">
         <li>
           <div class="card">
-            <img src="~examples/assets/images/guide.png" alt="">
+            <img src="~examples/assets/images/guide.png" alt="" />
             <h3><%= 3 ></h3>
             <p><%= 4 ></p>
             <router-link
               active-class="active"
               to="/<%= lang >/guide/design"
-              exact><%= 5 >
+              exact
+              ><%= 5 >
             </router-link>
           </div>
         </li>
         <li>
           <div class="card">
-            <img src="~examples/assets/images/component.png" alt="">
+            <img src="~examples/assets/images/component.png" alt="" />
             <h3><%= 6 ></h3>
             <p><%= 7 ></p>
             <router-link
               active-class="active"
               to="/<%= lang >/component/layout"
-              exact><%= 5 >
+              exact
+              ><%= 5 >
             </router-link>
           </div>
         </li>
         <li>
           <div class="card">
-            <img src="~examples/assets/images/theme-index-icon.svg" alt="">
+            <img src="~examples/assets/images/theme-index-icon.svg" alt="" />
             <h3><%= 10 ></h3>
             <p><%= 11 ></p>
-            <router-link
-              active-class="active"
-              to="/<%= lang >/theme"
-              exact><%= 5 >
+            <router-link active-class="active" to="/<%= lang >/theme" exact
+              ><%= 5 >
             </router-link>
           </div>
         </li>
         <li>
           <div class="card">
-            <img src="~examples/assets/images/resource.png" alt="">
+            <img src="~examples/assets/images/resource.png" alt="" />
             <h3><%= 8 ></h3>
             <p><%= 9 ></p>
-            <router-link
-              active-class="active"
-              to="/<%= lang >/resource"
-              exact><%= 5 >
+            <router-link active-class="active" to="/<%= lang >/resource" exact
+              ><%= 5 >
             </router-link>
           </div>
         </li>
@@ -368,39 +386,36 @@
     </div>
     <div class="theme-intro-a" v-if="showIntroA" @click="hideIntroA">
       <div class="intro-banner">
-        <img src="~examples/assets/images/theme-intro.png" alt="">
+        <img src="~examples/assets/images/theme-intro.png" alt="" />
         <div class="intro-text">
           <p><%= 12 ></p>
         </div>
       </div>
       <div class="mask"></div>
     </div>
-    <div 
-      class="theme-intro-b"
-      @click="hideIntroB"
-      v-if="showIntroB"
-    >
-      <div class="intro-banner"
-      :style="{
+    <div class="theme-intro-b" @click="hideIntroB" v-if="showIntroB">
+      <div
+        class="intro-banner"
+        :style="{
         left: introBX + 'px',
         top: introBY + 'px'
       }"
       >
-        <img src="~examples/assets/images/intro-theme-b.png" alt="">
-          <div class="title">
-            <div>
-              <p><%= 13 ></p>
-              <p><%= 14 ></p>
-            </div>
+        <img src="~examples/assets/images/intro-theme-b.png" alt="" />
+        <div class="title">
+          <div>
+            <p><%= 13 ></p>
+            <p><%= 14 ></p>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
   import throttle from 'throttle-debounce/throttle';
-  import { addClass, removeClass } from 'element-ui/src/utils/dom';
-  
+  import { addClass, removeClass } from 'full-ui/src/utils/dom';
+
   export default {
     created() {
       this.throttledHandleScroll = throttle(10, true, index => {
@@ -424,7 +439,8 @@
       },
       hideIntroA() {
         const themeTab = document.querySelector('.nav-item-theme');
-        this.introBX = themeTab.offsetLeft + (themeTab.clientWidth * 0.5) - (300 / 2);
+        this.introBX =
+          themeTab.offsetLeft + themeTab.clientWidth * 0.5 - 300 / 2;
         this.introBY = themeTab.offsetTop + 40;
         this.showIntroA = false;
         this.showIntroB = true;

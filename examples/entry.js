@@ -32,8 +32,10 @@ const globalEle = new Vue({
 Vue.mixin({
   computed: {
     $isEle: {
-      get: () => (globalEle.$data.$isEle),
-      set: (data) => {globalEle.$data.$isEle = data;}
+      get: () => globalEle.$data.$isEle,
+      set: data => {
+        globalEle.$data.$isEle = data;
+      }
     }
   }
 });
@@ -63,7 +65,8 @@ router.afterEach(route => {
   ga('send', 'event', 'PageView', route.name);
 });
 
-new Vue({ // eslint-disable-line
+new Vue({
+  // eslint-disable-line
   ...entry,
   router
 }).$mount('#app');

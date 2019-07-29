@@ -297,6 +297,10 @@
             {
               "path": "/search-box",
               "title": "Search-box"
+            },
+            {
+              "path": "/searchform",
+              "title": "Searchform"
             }
           ]
         }

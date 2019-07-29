@@ -18,6 +18,7 @@ const componentname = process.argv[2];
 const chineseName = process.argv[3] || componentname;
 const ComponentName = uppercamelcase(componentname);
 const PackagePath = path.resolve(__dirname, '../../packages', componentname);
+console.log('ComponentName::', ComponentName);
 const Files = [
   {
     filename: 'index.js',
@@ -47,18 +48,6 @@ export default {
     content: `## ${ComponentName} ${chineseName}`
   },
   {
-    filename: path.join('../../examples/docs/en-US', `${componentname}.md`),
-    content: `## ${ComponentName}`
-  },
-  {
-    filename: path.join('../../examples/docs/es', `${componentname}.md`),
-    content: `## ${ComponentName}`
-  },
-  {
-    filename: path.join('../../examples/docs/fr-FR', `${componentname}.md`),
-    content: `## ${ComponentName}`
-  },
-  {
     filename: path.join('../../test/unit/specs', `${componentname}.spec.js`),
     content: `import { createTest, destroyVM } from '../util';
 import ${ComponentName} from 'packages/${componentname}';
@@ -77,7 +66,10 @@ describe('${ComponentName}', () => {
 `
   },
   {
-    filename: path.join('../../packages/theme-chalk/src', `${componentname}.scss`),
+    filename: path.join(
+      '../../packages/theme-chalk/src',
+      `${componentname}.scss`
+    ),
     content: `@import "mixins/mixins";
 @import "common/var";
 
@@ -106,14 +98,19 @@ fileSave(path.join(__dirname, '../../components.json'))
   .end('\n');
 
 // 添加到 index.scss
-const sassPath = path.join(__dirname, '../../packages/theme-chalk/src/index.scss');
-const sassImportText = `${fs.readFileSync(sassPath)}@import "./${componentname}.scss";`;
+const sassPath = path.join(
+  __dirname,
+  '../../packages/theme-chalk/src/index.scss'
+);
+const sassImportText = `${fs.readFileSync(
+  sassPath
+)}@import "./${componentname}.scss";`;
 fileSave(sassPath)
   .write(sassImportText, 'utf8')
   .end('\n');
 
-// 添加到 element-ui.d.ts
-const elementTsPath = path.join(__dirname, '../../types/element-ui.d.ts');
+// 添加到 full-ui.d.ts
+const elementTsPath = path.join(__dirname, '../../types/full-ui.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */
@@ -122,7 +119,11 @@ export class ${ComponentName} extends El${ComponentName} {}`;
 const index = elementTsText.indexOf('export') - 1;
 const importString = `import { El${ComponentName} } from './${componentname}'`;
 
-elementTsText = elementTsText.slice(0, index) + importString + '\n' + elementTsText.slice(index);
+elementTsText =
+  elementTsText.slice(0, index) +
+  importString +
+  '\n' +
+  elementTsText.slice(index);
 
 fileSave(elementTsPath)
   .write(elementTsText, 'utf8')
@@ -137,14 +138,17 @@ Files.forEach(file => {
 
 // 添加到 nav.config.json
 const navConfigFile = require('../../examples/nav.config.json');
-
+console.log('navConfigFile::', navConfigFile);
 Object.keys(navConfigFile).forEach(lang => {
-  let groups = navConfigFile[lang][4].groups;
+  console.log('lang::', lang);
+  console.log(navConfigFile[lang].length);
+  let groups = navConfigFile[lang][2].groups;
   groups[groups.length - 1].list.push({
     path: `/${componentname}`,
-    title: lang === 'zh-CN' && componentname !== chineseName
-      ? `${ComponentName} ${chineseName}`
-      : ComponentName
+    title:
+      lang === 'zh-CN' && componentname !== chineseName
+        ? `${ComponentName} ${chineseName}`
+        : ComponentName
   });
 });
 

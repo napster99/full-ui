@@ -10,6 +10,6 @@ FROM registry.shdocker.tuya-inc.top/mirror/nginx:1.15.0
 ADD .docker/nginx.bs.conf /etc/nginx/conf.d/default.conf
 ADD .docker /
 
-COPY --from=compile /code/examples/element-ui /www
+COPY --from=compile /code/examples/full-ui /www
 
 RUN chmod -R 755 /www

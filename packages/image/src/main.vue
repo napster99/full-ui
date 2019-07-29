@@ -18,9 +18,9 @@
 </template>
 
 <script>
-  import Locale from 'element-ui/src/mixins/locale';
-  import { on, off, getScrollContainer, isInContainer } from 'element-ui/src/utils/dom';
-  import { isString, isHtmlElement } from 'element-ui/src/utils/types';
+  import Locale from 'full-ui/src/mixins/locale';
+  import { on, off, getScrollContainer, isInContainer } from 'full-ui/src/utils/dom';
+  import { isString, isHtmlElement } from 'full-ui/src/utils/types';
   import throttle from 'throttle-debounce/throttle';
 
   const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined;

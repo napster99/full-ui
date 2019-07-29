@@ -105,10 +105,10 @@
   </div>
 </template>
 <script>
-  import emitter from 'element-ui/src/mixins/emitter';
-  import Migrating from 'element-ui/src/mixins/migrating';
+  import emitter from 'full-ui/src/mixins/emitter';
+  import Migrating from 'full-ui/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
-  import merge from 'element-ui/src/utils/merge';
+  import merge from 'full-ui/src/utils/merge';
 
   export default {
     name: 'ElInput',

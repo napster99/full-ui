@@ -80,12 +80,13 @@ import InfiniteScroll from '../packages/infinite-scroll/index.js';
 import PageHeader from '../packages/page-header/index.js';
 import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
-import locale from 'element-ui/src/locale';
-import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import TySearchBox from '../packages/tuya/search-box/index.js';
 import TyDebounce from '../packages/debounce/index.js';
 
 import inputFormat from 'element-ui/src/directives/input-format';
+import Searchform from '../packages/searchform/index.js';
+import locale from 'full-ui/src/locale';
+import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
 const components = [
   TySearchBox,
@@ -164,6 +165,7 @@ const components = [
   PageHeader,
   CascaderPanel,
   Avatar,
+  Searchform,
   CollapseTransition
 ];
 
@@ -205,7 +207,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '2.10.0',
+  version: '1.0.7',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -289,5 +291,6 @@ export default {
   InfiniteScroll,
   PageHeader,
   CascaderPanel,
-  Avatar
+  Avatar,
+  Searchform
 };
