@@ -3,18 +3,18 @@ import { isString, isObject } from 'element-ui/src/utils/types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
-export function noop() {};
+export function noop() {}
 
 export function hasOwn(obj, key) {
   return hasOwnProperty.call(obj, key);
-};
+}
 
 function extend(to, _from) {
   for (let key in _from) {
     to[key] = _from[key];
   }
   return to;
-};
+}
 
 export function toObject(arr) {
   var res = {};
@@ -24,7 +24,7 @@ export function toObject(arr) {
     }
   }
   return res;
-};
+}
 
 export const getValueByPath = function(object, prop) {
   prop = prop || '';
@@ -68,7 +68,7 @@ export function getPropByPath(obj, path, strict) {
     k: keyArr[i],
     v: tempObj ? tempObj[keyArr[i]] : null
   };
-};
+}
 
 export const generateId = function() {
   return Math.floor(Math.random() * 10000);
@@ -86,7 +86,8 @@ export const valueEquals = (a, b) => {
   return true;
 };
 
-export const escapeRegexpString = (value = '') => String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+export const escapeRegexpString = (value = '') =>
+  String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
 
 // TODO: use native Array.find, Array.findIndex when IE support is dropped
 export const arrayFindIndex = function(arr, pred) {
@@ -216,3 +217,27 @@ export const isEmpty = function(val) {
 
   return false;
 };
+
+/**
+ * @description: 类型判断
+ * @param {type}
+ *    - obj: 要判断的变量
+ *    - type: 期望的类型：["undefined", "null", "Array", "Boolean", "Date", "Number", "Object", "RegExp", "String", "Function", "Window", "HTMLDocument"]
+ * @return: Boolean
+ */
+export function typeis(obj, type) {
+  if (!type) {
+    throw new Error('Miss required parameter -- type');
+  }
+  type = type.substr(0, 1).toUpperCase() + type.substring(1);
+  return Object.prototype.toString.call(obj) === '[object ' + type + ']';
+}
+
+// 判断对象是否为空对象
+export function isEmptyObject(e) {
+  let t;
+  for (t in e) {
+    return !1;
+  }
+  return !0;
+}
