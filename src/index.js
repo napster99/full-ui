@@ -82,8 +82,13 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
+import TySearchBox from '../packages/tuya/search-box/index.js';
+import TyDebounce from '../packages/debounce/index.js';
+
+import inputFormat from 'element-ui/src/directives/input-format';
 
 const components = [
+  TySearchBox,
   Pagination,
   Dialog,
   Autocomplete,
@@ -166,12 +171,19 @@ const install = function(Vue, opts = {}) {
   locale.use(opts.locale);
   locale.i18n(opts.i18n);
 
+  Vue.directive('format', inputFormat);
+
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 
   Vue.use(InfiniteScroll);
   Vue.use(Loading.directive);
+
+  Vue.use(TyDebounce, {
+    delay: 200,
+    im: false
+  });
 
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
@@ -185,7 +197,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
-
 };
 
 /* istanbul ignore if */
