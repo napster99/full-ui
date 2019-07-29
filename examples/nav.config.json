@@ -62,6 +62,14 @@
             {
               "path": "/link",
               "title": "Link 文字链接"
+            },
+            {
+              "path": "/debounce",
+              "title": "debounce"
+            },
+            {
+              "path": "/format",
+              "title": "format"
             }
           ]
         },
@@ -285,6 +293,10 @@
             {
               "path": "/napster",
               "title": "搜索栏"
+            },
+            {
+              "path": "/search-box",
+              "title": "Search-box"
             }
           ]
         }
