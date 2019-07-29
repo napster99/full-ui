@@ -6,7 +6,7 @@
  * @Lasteditors: vins
  -->
 <script>
-import { typeis } from 'element-ui/src/utils/util';
+import { typeis } from 'full-ui/src/utils/util';
 
 // 格式化事件配置参数,格式化为对象数组
 function formatEventsOption(opt) {

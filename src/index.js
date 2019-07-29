@@ -83,7 +83,7 @@ import Avatar from '../packages/avatar/index.js';
 import TySearchBox from '../packages/tuya/search-box/index.js';
 import TyDebounce from '../packages/debounce/index.js';
 
-import inputFormat from 'element-ui/src/directives/input-format';
+import inputFormat from 'full-ui/src/directives/input-format';
 import Searchform from '../packages/searchform/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';

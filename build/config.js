@@ -50,7 +50,8 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'full-ui': path.resolve(__dirname, '../')
+  'full-ui': path.resolve(__dirname, '../'),
+  '@tuya-fe/full-ui': path.resolve(__dirname, '../')
 };
 
 exports.vue = {

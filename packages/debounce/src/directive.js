@@ -7,8 +7,8 @@
  */
 
 import debounce from 'throttle-debounce/debounce';
-import { typeis } from 'element-ui/src/utils/util';
-import { on, off } from 'element-ui/src/utils/dom';
+import { typeis } from 'full-ui/src/utils/util';
+import { on, off } from 'full-ui/src/utils/dom';
 
 export { debounce };
 

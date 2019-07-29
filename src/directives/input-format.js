@@ -11,8 +11,8 @@
  * 该指令会添加相应的事件监听去格式化内容，相应的事件回调的第二个参数
  */
 
-import { on, off } from 'element-ui/src/utils/dom';
-import { typeis, isEmptyObject } from 'element-ui/src/utils/util';
+import { on, off } from 'full-ui/src/utils/dom';
+import { typeis, isEmptyObject } from 'full-ui/src/utils/util';
 
 /**
  * @description: 自定义的格式化输入框内容的指令

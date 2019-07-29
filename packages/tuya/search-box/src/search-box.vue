@@ -7,148 +7,153 @@
  -->
 
 <template>
-  <div class="ui-from" :class="{active: isActive}">
+  <div :class="{active: isActive}" class="ui-from">
     <el-form
-      class="form"
-      :model="formValueMap"
       :inline="true"
+      :label-width="options.labelWidth"
+      :model="formValueMap"
       @submit.native.prevent
-      :label-width="options.labelWidth">
+      class="form"
+    >
       <div class="search-filter">
         <el-row ref="jSearchFilter">
           <el-form-item
-            v-for="item in filteredFormList"
+            :key="item.key || item.label"
             :label="item.label"
             :prop="item.key"
             :rules="item.rules"
-            :key="item.key || item.label">
+            v-for="item in filteredFormList"
+          >
             <!-- 基础输入框 -->
             <el-input
+              v-bind="item._formatBind"
               v-if="['input', 'textarea', 'email', 'password', 'search', 'number', 'tel'].includes(item.type)"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind">
-            </el-input>
+            ></el-input>
             <!-- 远程搜索输入框 -->
             <el-autocomplete
-              v-if="item.type === 'remoteinput'"
-              v-model="formValueMap[item.key]"
               :fetch-suggestions="item.remoteMethod"
               :placeholder="item.placeholder"
               @select="item.onSelect || noop"
+              v-if="item.type === 'remoteinput'"
+              v-model="formValueMap[item.key]"
             ></el-autocomplete>
             <!-- 单选框 -->
             <el-radio-group
+              :disabled="!!item.disabled"
+              @change="item.change || noop"
               v-if="item.type === 'radio'"
               v-model="formValueMap[item.key]"
-              :disabled="!!item.disabled"
-              @change="item.change || noop">
+            >
               <!-- value字段赋值给label，保证数据结构的统一，label：显示，value：真实值 -->
               <template v-for="radio in item.options">
                 <!-- 对象数组格式 -->
                 <el-radio
-                  v-if="radio.label"
-                  :name="radio.name"
-                  :label="radio.value || radio.label"
                   :disabled="!!radio.disabled"
                   :key="radio.value || radio.label"
-                  @change="radio.change || noop">{{ radio.label }}</el-radio>
+                  :label="radio.value || radio.label"
+                  :name="radio.name"
+                  @change="radio.change || noop"
+                  v-if="radio.label"
+                >{{ radio.label }}</el-radio>
                 <!-- 字符串格式 -->
-                <el-radio
-                  v-else
-                  :label="radio"
-                  :key="radio"></el-radio>
+                <el-radio :key="radio" :label="radio" v-else></el-radio>
               </template>
             </el-radio-group>
             <!-- 复选框 -->
             <el-checkbox-group
+              :disabled="!!item.disabled"
+              @change="item.change || noop"
               v-if="item.type === 'checkbox'"
               v-model="formValueMap[item.key]"
-              :disabled="!!item.disabled"
-              @change="item.change || noop">
+            >
               <template v-for="checkbox in item.options">
                 <!-- 对象数组格式 -->
                 <el-checkbox
-                  v-if="checkbox.label"
-                  :name="checkbox.name"
-                  :label="checkbox.value || checkbox.label"
                   :disabled="!!checkbox.disabled"
                   :key="checkbox.value"
-                  @change="checkbox.change || noop">{{ checkbox.label }}</el-checkbox>
+                  :label="checkbox.value || checkbox.label"
+                  :name="checkbox.name"
+                  @change="checkbox.change || noop"
+                  v-if="checkbox.label"
+                >{{ checkbox.label }}</el-checkbox>
                 <!-- 字符串格式 -->
-                <el-checkbox
-                  v-else
-                  :label="checkbox"
-                  :key="checkbox"></el-checkbox>
+                <el-checkbox :key="checkbox" :label="checkbox" v-else></el-checkbox>
               </template>
             </el-checkbox-group>
             <!-- 选择框 -->
             <el-select
+              v-bind="item._formatBind"
               v-if="item.type === 'select'"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind">
+            >
               <el-option
-                v-for="option in item.options"
+                :disabled="!!option.disabled"
+                :key="option.value"
                 :label="option.label"
                 :value="option.value"
-                :disabled="!!option.disabled"
-                :key="option.value"></el-option>
+                v-for="option in item.options"
+              ></el-option>
             </el-select>
             <!-- 分组选择框 -->
             <el-select
+              v-bind="item._formatBind"
               v-if="item.type === 'selectgroup'"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind">
-              <el-option-group
-                v-for="group in item.groups"
-                :key="group.label"
-                :label="group.label">
+            >
+              <el-option-group :key="group.label" :label="group.label" v-for="group in item.groups">
                 <el-option
-                  v-for="option in group.options"
+                  :disabled="!!option.disabled"
+                  :key="option.value"
                   :label="option.label"
                   :value="option.value"
-                  :disabled="!!option.disabled"
-                  :key="option.value"></el-option>
+                  v-for="option in group.options"
+                ></el-option>
               </el-option-group>
             </el-select>
             <!-- 集联选择 -->
             <el-cascader
+              :options="item.options"
+              change-on-select
               v-if="item.type === 'cascader'"
               v-model="formValueMap[item.key]"
-              :options="item.options"
-              change-on-select></el-cascader>
+            ></el-cascader>
             <!-- 时间选择器 tag: el-time-select的type类型不能存在，否则不能显示输入的值-->
             <el-time-select
+              :type="undefined"
+              v-bind="item._formatBind"
               v-if="item.type === 'time'"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind"
-              :type="undefined"></el-time-select>
+            ></el-time-select>
             <!-- 时间选择器 -->
             <el-time-picker
+              v-bind="item._formatBind"
               v-if="item.type === 'timepicker'"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind"></el-time-picker>
+            ></el-time-picker>
             <!-- 日期选择 -->
             <el-date-picker
+              v-bind="item._formatBind"
               v-if="['year', 'month', 'date', 'dates', 'week', 'datetime', 'datetimerange', 'daterange', 'monthrange'].includes(item.type)"
               v-model="formValueMap[item.key]"
               v-on="item.events"
-              v-bind="item._formatBind"></el-date-picker>
+            ></el-date-picker>
           </el-form-item>
         </el-row>
       </div>
       <div class="search-op">
         <slot class="other" name="op"></slot>
         <el-form-item>
-          <el-button type="primary" @click="handleSearch" icon="el-icon-search">搜索</el-button>
+          <el-button @click="handleSearch" icon="el-icon-search" type="primary">搜索</el-button>
         </el-form-item>
         <el-form-item v-show="isVisible">
-          <el-tooltip content="展开/隐藏搜索选项" placement="top" :open-delay="1000">
-            <el-button class="btn-toggle" @click="handleToggleSearch">
+          <el-tooltip :open-delay="1000" content="展开/隐藏搜索选项" placement="top">
+            <el-button @click="handleToggleSearch" class="btn-toggle">
               <i class="el-icon-arrow-down"></i>
             </el-button>
           </el-tooltip>
@@ -168,7 +173,7 @@
 
 <script>
 // import TyHeaderSelect from '~/components/common/table/header-select';
-import event from 'element-ui/src/utils/event';
+import event from 'full-ui/src/utils/event';
 import throttle from 'throttle-debounce/throttle';
 
 export default {
@@ -207,7 +212,7 @@ export default {
   computed: {
     filteredFormList() {
       // 过滤掉key值为空的项
-      return this.formList.filter((item) => {
+      return this.formList.filter(item => {
         if (item.key && !item._isFormatBind) {
           // 过滤掉不需要bind的数据，并添加是否已过滤的标识
           item._formatBind = this.formatBindData(item);
@@ -242,7 +247,10 @@ export default {
       return formatObj;
     },
     checkToggle() {
-      let height = parseInt(this.getStyle(this.$refs.jSearchFilter.$el).height, 10);
+      let height = parseInt(
+        this.getStyle(this.$refs.jSearchFilter.$el).height,
+        10
+      );
       if (height > 47 * 2) {
         this.isVisible = true;
       } else {
