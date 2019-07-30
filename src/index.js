@@ -82,6 +82,7 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import TySearchBox from '../packages/tuya/search-box/index.js';
 import TyDebounce from '../packages/debounce/index.js';
+import TyThrottle from '../packages/throttle/index.js';
 import Searchform from '../packages/searchform/index.js';
 import TyTable from '../packages/tuya/table/index.js';
 
@@ -187,6 +188,10 @@ const install = function(Vue, opts = {}) {
   Vue.use(TyDebounce, {
     delay: 200,
     im: false
+  });
+  Vue.use(TyThrottle, {
+    delay: 1000,
+    noTrailing: false
   });
 
   Vue.prototype.$ELEMENT = {

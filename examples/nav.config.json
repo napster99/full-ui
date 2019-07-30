@@ -68,6 +68,10 @@
               "title": "TyDebounce 防抖"
             },
             {
+              "path": "/throttle",
+              "title": "TyThrottle 节流"
+            },
+            {
               "path": "/format",
               "title": "v-format 输入框格式化"
             },
