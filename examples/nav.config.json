@@ -65,11 +65,15 @@
             },
             {
               "path": "/debounce",
-              "title": "debounce"
+              "title": "TyDebounce 防抖"
             },
             {
               "path": "/format",
-              "title": "format"
+              "title": "v-format 输入框格式化"
+            },
+            {
+              "path": "/ty-table",
+              "title": "TyTable 表格-数据结构"
             }
           ]
         },
@@ -296,7 +300,7 @@
             },
             {
               "path": "/search-box",
-              "title": "Search-box"
+              "title": "SearchBox"
             },
             {
               "path": "/searchform",

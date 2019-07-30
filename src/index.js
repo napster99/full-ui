@@ -82,14 +82,16 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import TySearchBox from '../packages/tuya/search-box/index.js';
 import TyDebounce from '../packages/debounce/index.js';
+import Searchform from '../packages/searchform/index.js';
+import TyTable from '../packages/tuya/table/index.js';
 
 import inputFormat from 'full-ui/src/directives/input-format';
-import Searchform from '../packages/searchform/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
 const components = [
   TySearchBox,
+  TyTable,
   Pagination,
   Dialog,
   Autocomplete,
