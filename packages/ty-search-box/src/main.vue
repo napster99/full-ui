@@ -143,6 +143,8 @@
               v-model="formValueMap[item.key]"
               v-on="item.events"
             ></el-date-picker>
+            <!-- 自定义组件 -->
+            <render-component :render="item.render" v-if="item.render"></render-component>
           </el-form-item>
         </el-row>
       </div>
@@ -176,6 +178,27 @@
 import event from 'full-ui/src/utils/event';
 import throttle from 'throttle-debounce/throttle';
 
+// 使用render方法渲染自定义的组件
+const RenderComponent = {
+  name: 'RenderComponent',
+  props: {
+    render: Function
+  },
+  render(h) {
+    let parent = this;
+    // 绑定渲染函数的this值为ty-search-box组件所在的上下文
+    while (parent) {
+      if (parent.$options._componentTag === 'ty-search-box') {
+        parent = parent.$vnode.context;
+        break;
+      } else {
+        parent = parent.$parent;
+      }
+    }
+    return this.render.call(parent, h, parent);
+  }
+};
+
 export default {
   name: 'TySearchBox',
   data() {
@@ -184,6 +207,9 @@ export default {
       isActive: false,
       isVisible: false
     };
+  },
+  components: {
+    RenderComponent
   },
   props: {
     formList: {

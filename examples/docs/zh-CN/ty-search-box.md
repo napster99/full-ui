@@ -225,6 +225,27 @@
             key: 'monthrange',
             placeholder: 'select date',
           },
+          {
+            key: 'vins',
+            label: 'vins',
+            render(h) {
+              console.log(this)
+              return h(
+                'el-button',
+                {
+                  props: {
+                    type: 'warning',
+                  },
+                  on: {
+                    click: () => {
+                      this.click()
+                    },
+                  },
+                },
+                'render'
+              )
+            },
+          },
         ]),
       }
     },
@@ -235,6 +256,11 @@
       console.log('更新')
     },
     mounted() {},
+    methods: {
+      click() {
+        alert('click')
+      },
+    },
   }
 </script>
 ```
@@ -253,16 +279,17 @@
 该组件是对 element UI 的 form 表单的封装，element 表单上支持什么属性，相应的条目类型也支持
 :::
 
-| 参数         | 说明                     | 类型               | 可选值                                                                                                                                                                                                               | 默认值 |
-| ------------ | ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| type         | 条目类型                 | string             | input, textarea, email, password, search, number, tel，remoteinput，radio，checkbox，select，selectgroup，cascader，time，timepicker，year, month, date, dates, week, datetime, datetimerange, daterange, monthrange | —      |
-| label        | 条目 label               | string             | —                                                                                                                                                                                                                    | false  |
-| defaultValue | 默认值                   | -                  | —                                                                                                                                                                                                                    | —      |
-| key          | vue 的 key               | string             | —                                                                                                                                                                                                                    | —      |
-| placeholder  | placeholder              | string             | —                                                                                                                                                                                                                    | —      |
-| rules        | 验证规则                 | string             | —                                                                                                                                                                                                                    | —      |
-| events       | 条目监听的事件           | object< function > | —                                                                                                                                                                                                                    | —      |
-| options      | 下拉，单选，多选的子元素 | Array              | —                                                                                                                                                                                                                    | —      |
+| 参数         | 说明                                                                                                                                                                     | 类型               | 可选值                                                                                                                                                                                                               | 默认值 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| type         | 条目类型                                                                                                                                                                 | string             | input, textarea, email, password, search, number, tel，remoteinput，radio，checkbox，select，selectgroup，cascader，time，timepicker，year, month, date, dates, week, datetime, datetimerange, daterange, monthrange | —      |
+| label        | 条目 label                                                                                                                                                               | string             | —                                                                                                                                                                                                                    | false  |
+| defaultValue | 默认值                                                                                                                                                                   | -                  | —                                                                                                                                                                                                                    | —      |
+| key          | vue 的 key                                                                                                                                                               | string             | —                                                                                                                                                                                                                    | —      |
+| placeholder  | placeholder                                                                                                                                                              | string             | —                                                                                                                                                                                                                    | —      |
+| rules        | 验证规则                                                                                                                                                                 | string             | —                                                                                                                                                                                                                    | —      |
+| events       | 条目监听的事件                                                                                                                                                           | object< function > | —                                                                                                                                                                                                                    | —      |
+| options      | 下拉，单选，多选的子元素                                                                                                                                                 | Array              | —                                                                                                                                                                                                                    | —      |
+| render       | 自定义的渲染函数，可以渲染自定义组件，参考 vue：render；该函数的上下文已经绑定到 ty-search-box 组件的上下文；同时该函数的第二个参数也指向当前 ty-search-box 组件的上下文 | Function           | —                                                                                                                                                                                                                    | —      |
 
 ### options Attributes
 
