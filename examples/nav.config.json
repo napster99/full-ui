@@ -303,10 +303,6 @@
               "title": "搜索栏"
             },
             {
-              "path": "/search-box",
-              "title": "SearchBox"
-            },
-            {
               "path": "/searchform",
               "title": "Searchform"
             },
