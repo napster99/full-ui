@@ -31,6 +31,15 @@ const install = function(Vue, opts = {}) {
   Vue.use(InfiniteScroll);
   Vue.use(Loading.directive);
 
+  Vue.use(TyDebounce, {
+    delay: 200,
+    im: false
+  });
+  Vue.use(TyThrottle, {
+    delay: 1000,
+    noTrailing: false
+  });
+
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
     zIndex: opts.zIndex || 2000

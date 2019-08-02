@@ -1,6 +1,5 @@
 import directive, { throttle } from './src/directive.js';
-import TyThrottle from './src/throttle.vue';
-import Vue from 'vue';
+import TyThrottle from './src/main.vue';
 
 TyThrottle.install = function(
   Vue,
@@ -27,10 +26,5 @@ TyThrottle.install = function(
 TyThrottle.setThrottleOption = function(opts) {
   directive.setThrottleOption(opts);
 };
-
-Vue.use(TyThrottle, {
-  delay: 1000,
-  noTrailing: false
-});
 
 export default TyThrottle;

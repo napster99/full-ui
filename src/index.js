@@ -83,6 +83,8 @@ import Avatar from '../packages/avatar/index.js';
 import Searchform from '../packages/searchform/index.js';
 import TySearchBox from '../packages/ty-search-box/index.js';
 import TyTable from '../packages/ty-table/index.js';
+import TyDebounce from '../packages/ty-debounce/index.js';
+import TyThrottle from '../packages/ty-throttle/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -165,6 +167,8 @@ const components = [
   Searchform,
   TySearchBox,
   TyTable,
+  TyDebounce,
+  TyThrottle,
   CollapseTransition
 ];
 
@@ -178,6 +182,15 @@ const install = function(Vue, opts = {}) {
 
   Vue.use(InfiniteScroll);
   Vue.use(Loading.directive);
+
+  Vue.use(TyDebounce, {
+    delay: 200,
+    im: false
+  });
+  Vue.use(TyThrottle, {
+    delay: 1000,
+    noTrailing: false
+  });
 
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
@@ -287,5 +300,7 @@ export default {
   Avatar,
   Searchform,
   TySearchBox,
-  TyTable
+  TyTable,
+  TyDebounce,
+  TyThrottle
 };

@@ -1,6 +1,5 @@
 import directive, { debounce } from './src/directive.js';
 import TyDebounce from './src/main.vue';
-import Vue from 'vue';
 
 TyDebounce.install = function(
   Vue,
@@ -27,10 +26,5 @@ TyDebounce.install = function(
 TyDebounce.setDebounceOption = function(opts) {
   directive.setDebounceOption(opts);
 };
-
-Vue.use(TyDebounce, {
-  delay: 200,
-  im: false
-});
 
 export default TyDebounce;
