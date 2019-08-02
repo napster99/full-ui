@@ -79,5 +79,9 @@
   "page-header": "./packages/page-header/index.js",
   "cascader-panel": "./packages/cascader-panel/index.js",
   "avatar": "./packages/avatar/index.js",
-  "searchform": "./packages/searchform/index.js"
+  "searchform": "./packages/searchform/index.js",
+  "ty-search-box": "./packages/ty-search-box/index.js",
+  "ty-table": "./packages/ty-table/index.js",
+  "ty-debounce": "./packages/ty-debounce/index.js",
+  "ty-throttle": "./packages/ty-throttle/index.js"
 }

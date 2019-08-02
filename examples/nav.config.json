@@ -309,6 +309,22 @@
             {
               "path": "/searchform",
               "title": "Searchform"
+            },
+            {
+              "path": "/ty-search-box",
+              "title": "TySearchBox"
+            },
+            {
+              "path": "/ty-table",
+              "title": "TyTable"
+            },
+            {
+              "path": "/ty-debounce",
+              "title": "TyDebounce"
+            },
+            {
+              "path": "/ty-throttle",
+              "title": "TyThrottle"
             }
           ]
         }

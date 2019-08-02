@@ -80,19 +80,13 @@ import InfiniteScroll from '../packages/infinite-scroll/index.js';
 import PageHeader from '../packages/page-header/index.js';
 import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
-import TySearchBox from '../packages/tuya/search-box/index.js';
-import TyDebounce from '../packages/debounce/index.js';
-import TyThrottle from '../packages/throttle/index.js';
 import Searchform from '../packages/searchform/index.js';
-import TyTable from '../packages/tuya/table/index.js';
-
-import inputFormat from 'full-ui/src/directives/input-format';
+import TySearchBox from '../packages/ty-search-box/index.js';
+import TyTable from '../packages/ty-table/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
 const components = [
-  TySearchBox,
-  TyTable,
   Pagination,
   Dialog,
   Autocomplete,
@@ -169,6 +163,8 @@ const components = [
   CascaderPanel,
   Avatar,
   Searchform,
+  TySearchBox,
+  TyTable,
   CollapseTransition
 ];
 
@@ -176,23 +172,12 @@ const install = function(Vue, opts = {}) {
   locale.use(opts.locale);
   locale.i18n(opts.i18n);
 
-  Vue.directive('format', inputFormat);
-
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 
   Vue.use(InfiniteScroll);
   Vue.use(Loading.directive);
-
-  Vue.use(TyDebounce, {
-    delay: 200,
-    im: false
-  });
-  Vue.use(TyThrottle, {
-    delay: 1000,
-    noTrailing: false
-  });
 
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
@@ -206,6 +191,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
+
 };
 
 /* istanbul ignore if */
@@ -299,5 +285,7 @@ export default {
   PageHeader,
   CascaderPanel,
   Avatar,
-  Searchform
+  Searchform,
+  TySearchBox,
+  TyTable
 };
