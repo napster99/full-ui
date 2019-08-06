@@ -83,5 +83,6 @@
   "ty-search-box": "./packages/ty-search-box/index.js",
   "ty-table": "./packages/ty-table/index.js",
   "ty-debounce": "./packages/ty-debounce/index.js",
-  "ty-throttle": "./packages/ty-throttle/index.js"
+  "ty-throttle": "./packages/ty-throttle/index.js",
+  "ty-render-table": "./packages/ty-render-table/index.js"
 }

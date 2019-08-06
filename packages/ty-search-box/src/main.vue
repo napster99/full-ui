@@ -7,7 +7,10 @@
  -->
 
 <template>
-  <div :class="{active: isActive}" class="ui-from">
+  <div
+    :class="{active: isActive}"
+    class="ui-from"
+  >
     <el-form
       :inline="true"
       :label-width="options.labelWidth"
@@ -58,7 +61,11 @@
                   v-if="radio.label"
                 >{{ radio.label }}</el-radio>
                 <!-- 字符串格式 -->
-                <el-radio :key="radio" :label="radio" v-else></el-radio>
+                <el-radio
+                  :key="radio"
+                  :label="radio"
+                  v-else
+                ></el-radio>
               </template>
             </el-radio-group>
             <!-- 复选框 -->
@@ -79,7 +86,11 @@
                   v-if="checkbox.label"
                 >{{ checkbox.label }}</el-checkbox>
                 <!-- 字符串格式 -->
-                <el-checkbox :key="checkbox" :label="checkbox" v-else></el-checkbox>
+                <el-checkbox
+                  :key="checkbox"
+                  :label="checkbox"
+                  v-else
+                ></el-checkbox>
               </template>
             </el-checkbox-group>
             <!-- 选择框 -->
@@ -104,7 +115,11 @@
               v-model="formValueMap[item.key]"
               v-on="item.events"
             >
-              <el-option-group :key="group.label" :label="group.label" v-for="group in item.groups">
+              <el-option-group
+                :key="group.label"
+                :label="group.label"
+                v-for="group in item.groups"
+              >
                 <el-option
                   :disabled="!!option.disabled"
                   :key="option.value"
@@ -144,18 +159,35 @@
               v-on="item.events"
             ></el-date-picker>
             <!-- 自定义组件 -->
-            <render-component :render="item.render" v-if="item.render"></render-component>
+            <render-component
+              :render="item.render"
+              v-if="item.render"
+            ></render-component>
           </el-form-item>
         </el-row>
       </div>
       <div class="search-op">
-        <slot class="other" name="op"></slot>
+        <slot
+          class="other"
+          name="op"
+        ></slot>
         <el-form-item>
-          <el-button @click="handleSearch" icon="el-icon-search" type="primary">搜索</el-button>
+          <el-button
+            @click="handleSearch"
+            icon="el-icon-search"
+            type="primary"
+          >搜索</el-button>
         </el-form-item>
         <el-form-item v-show="isVisible">
-          <el-tooltip :open-delay="1000" content="展开/隐藏搜索选项" placement="top">
-            <el-button @click="handleToggleSearch" class="btn-toggle">
+          <el-tooltip
+            :open-delay="1000"
+            content="展开/隐藏搜索选项"
+            placement="top"
+          >
+            <el-button
+              @click="handleToggleSearch"
+              class="btn-toggle"
+            >
               <i class="el-icon-arrow-down"></i>
             </el-button>
           </el-tooltip>
@@ -307,44 +339,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.ui-from {
-  &.active {
-    max-height: 1000px;
-    .search-filter {
-      max-height: 1000px;
-    }
-    .search-op {
-      .btn-toggle {
-        .el-icon-arrow-down {
-          transform: rotate(180deg);
-        }
-      }
-    }
-  }
-  .search-filter {
-    max-height: 57px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    .el-form-item {
-      .el-form-item__label {
-        height: 47px;
-        overflow: hidden;
-      }
-      .el-input,
-      .el-date-editor {
-        width: 235px;
-      }
-    }
-  }
-  .search-op {
-    text-align: right;
-    .btn-toggle {
-      .el-icon-arrow-down {
-        transition: all 0.3s ease;
-      }
-    }
-  }
-}
-</style>
-

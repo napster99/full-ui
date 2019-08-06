@@ -85,6 +85,7 @@ import TySearchBox from '../packages/ty-search-box/index.js';
 import TyTable from '../packages/ty-table/index.js';
 import TyDebounce from '../packages/ty-debounce/index.js';
 import TyThrottle from '../packages/ty-throttle/index.js';
+import TyRenderTable from '../packages/ty-render-table/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -169,6 +170,7 @@ const components = [
   TyTable,
   TyDebounce,
   TyThrottle,
+  TyRenderTable,
   CollapseTransition
 ];
 
@@ -302,5 +304,6 @@ export default {
   TySearchBox,
   TyTable,
   TyDebounce,
-  TyThrottle
+  TyThrottle,
+  TyRenderTable
 };

@@ -299,13 +299,14 @@
           "groupName": "公共组件",
           "list": [
             {
-              "path": "/napster",
-              "title": "搜索栏"
-            },
-            {
-              "path": "/searchform",
-              "title": "Searchform"
-            },
+              "path": "/ty-render-table",
+              "title": "TyRenderTable 表格"
+            }
+          ]
+        },
+        {
+          "groupName": "BSS专属",
+          "list": [
             {
               "path": "/ty-search-box",
               "title": "TySearchBox"
@@ -321,6 +322,10 @@
             {
               "path": "/ty-throttle",
               "title": "TyThrottle"
+            },
+            {
+              "path": "/ty-render-table",
+              "title": "TyRenderTable"
             }
           ]
         }

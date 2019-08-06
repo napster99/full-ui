@@ -3,6 +3,8 @@ import { ElTySearchBox } from './ty-search-box'
 import { ElTyTable } from './ty-table'
 import { ElTyDebounce } from './ty-debounce'
 import { ElTyThrottle } from './ty-throttle'
+import { ElTyRenderTable } from './ty-render-table'
+import { Bbbb } from './bbbb'
 
 export class Searchform extends ElSearchform {}
 
@@ -17,3 +19,9 @@ export class TyDebounce extends ElTyDebounce {}
 
 /** TyThrottle Component */
 export class TyThrottle extends ElTyThrottle {}
+
+/** TyRenderTable Component */
+export class TyRenderTable extends ElTyRenderTable {}
+
+/** Bbbb Component */
+export class Bbbb extends Bbbb {}
