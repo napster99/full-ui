@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'ElTyRenderTable'
+  name: 'TyRenderTable'
 };
 </script>
