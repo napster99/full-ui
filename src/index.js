@@ -86,6 +86,7 @@ import TyTable from '../packages/ty-table/index.js';
 import TyDebounce from '../packages/ty-debounce/index.js';
 import TyThrottle from '../packages/ty-throttle/index.js';
 import TyRenderTable from '../packages/ty-render-table/index.js';
+import TyInputList from '../packages/ty-input-list/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -171,6 +172,7 @@ const components = [
   TyDebounce,
   TyThrottle,
   TyRenderTable,
+  TyInputList,
   CollapseTransition
 ];
 
@@ -206,7 +208,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
-
 };
 
 /* istanbul ignore if */
@@ -305,5 +306,6 @@ export default {
   TyTable,
   TyDebounce,
   TyThrottle,
-  TyRenderTable
+  TyRenderTable,
+  TyInputList
 };
