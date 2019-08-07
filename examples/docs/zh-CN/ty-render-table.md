@@ -16,14 +16,14 @@ yarn add @tuya-fe/ty-render-table
 
 ```html
 <template>
-  <el-ty-render-table
+  <ty-render-table
     :table-data="tableData"
     :table-columns="tableColumns"
     :page-info="pageInfo"
     :current-change="search"
     :size-change="sizeChange"
     :table-loading="loading"
-  ></el-ty-render-table>
+  ></ty-render-table>
 </template>
 
 <script>
@@ -31,37 +31,60 @@ yarn add @tuya-fe/ty-render-table
     data() {
       return {
         loading: false,
-        tableData: [],
+        tableData: [
+          {
+            name: '张三',
+            age: 20
+          }
+        ],
         tableColumns: [
           {
-            prop: 'xxx',
-            label: 'xxx'
+            prop: 'name',
+            label: '名称'
           },
           {
-            prop: 'xxx',
-            label: 'xxx',
+            prop: 'age',
+            label: '年龄',
             render: (h, { data }) => {
-              return h('div', data.XXX);
+              return h('div', data.age);
             }
           },
           {
             prop: 'operate',
             label: '操作',
             render: (h, { data }) => {
-              return h(
-                'el-buttom',
-                {
-                  props: {
-                    size: 'small'
-                  },
-                  on: {
-                    click: () => {
-                      this.todo(data);
+              return h('div', {}, [
+                h(
+                  'el-button',
+                  {
+                    props: {
+                      size: 'small',
+                      type: 'primary'
+                    },
+                    on: {
+                      click: () => {
+                        this.todo(data);
+                      }
                     }
-                  }
-                },
-                '操作按钮文案'
-              );
+                  },
+                  '编辑'
+                ),
+                h(
+                  'el-button',
+                  {
+                    props: {
+                      size: 'small',
+                      type: 'danger'
+                    },
+                    on: {
+                      click: () => {
+                        this.todo(data);
+                      }
+                    }
+                  },
+                  '删除'
+                )
+              ]);
             }
           }
         ],
