@@ -3,3 +3,10 @@
 
 @include b(ty-search-form) {
 }
+
+.el-input+.el-input {
+  margin-left: 10px;
+}
+.el-input+.el-button {
+  margin-left: 10px;
+}
