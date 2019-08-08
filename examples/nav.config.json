@@ -301,6 +301,10 @@
             {
               "path": "/ty-render-table",
               "title": "TyRenderTable 表格"
+            },
+            {
+              "path": "/ty-search-form",
+              "title": "TySearchForm 筛选栏"
             }
           ]
         },
