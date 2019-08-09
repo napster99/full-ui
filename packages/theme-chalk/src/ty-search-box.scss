@@ -1,5 +1,43 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(ty-search-box) {
+  .ui-from {
+    &.active {
+      max-height: 1000px;
+      .search-filter {
+        max-height: 1000px;
+      }
+      .search-op {
+        .btn-toggle {
+          .el-icon-arrow-down {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    .search-filter {
+      max-height: 57px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      .el-form-item {
+        .el-form-item__label {
+          height: 47px;
+          overflow: hidden;
+        }
+        .el-input,
+        .el-date-editor {
+          width: 235px;
+        }
+      }
+    }
+    .search-op {
+      text-align: right;
+      .btn-toggle {
+        .el-icon-arrow-down {
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
 }

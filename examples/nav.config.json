@@ -299,13 +299,18 @@
           "groupName": "公共组件",
           "list": [
             {
-              "path": "/napster",
-              "title": "搜索栏"
+              "path": "/ty-render-table",
+              "title": "TyRenderTable 表格"
             },
             {
-              "path": "/searchform",
-              "title": "Searchform"
-            },
+              "path": "/ty-input-list",
+              "title": "TyInputList 多行输入框"
+            }
+          ]
+        },
+        {
+          "groupName": "BSS专属",
+          "list": [
             {
               "path": "/ty-search-box",
               "title": "TySearchBox"
@@ -321,6 +326,29 @@
             {
               "path": "/ty-throttle",
               "title": "TyThrottle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "页面模版",
+      "groups": [
+        {
+          "groupName": "列表系列",
+          "list": [
+            {
+              "path": "/ty-render-table",
+              "title": "TyRenderTable 表格"
+            }
+          ]
+        },
+        {
+          "groupName": "弹窗系列",
+          "list": [
+            {
+              "path": "/ty-search-box",
+              "title": "TySearchBox"
             }
           ]
         }

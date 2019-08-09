@@ -34,12 +34,12 @@ export default ${ComponentName};`
   {
     filename: 'src/main.vue',
     content: `<template>
-  <div class="el-${componentname}"></div>
+  <div class="${componentname}"></div>
 </template>
 
 <script>
 export default {
-  name: 'El${ComponentName}'
+  name: '${ComponentName}'
 };
 </script>`
   },
@@ -81,7 +81,7 @@ describe('${ComponentName}', () => {
     content: `import { ElementUIComponent } from './component'
 
 /** ${ComponentName} Component */
-export declare class El${ComponentName} extends ElementUIComponent {
+export declare class ${ComponentName} extends ElementUIComponent {
 }`
   }
 ];
@@ -114,10 +114,10 @@ const elementTsPath = path.join(__dirname, '../../types/full-ui.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */
-export class ${ComponentName} extends El${ComponentName} {}`;
+export class ${ComponentName} extends ${ComponentName} {}`;
 
 const index = elementTsText.indexOf('export') - 1;
-const importString = `import { El${ComponentName} } from './${componentname}'`;
+const importString = `import { ${ComponentName} } from './${componentname}'`;
 
 elementTsText =
   elementTsText.slice(0, index) +

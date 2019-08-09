@@ -1,8 +1,10 @@
 /** Searchform Component */ import { ElSearchform } from './searchform';
-import { ElTySearchBox } from './ty-search-box'
-import { ElTyTable } from './ty-table'
-import { ElTyDebounce } from './ty-debounce'
-import { ElTyThrottle } from './ty-throttle'
+import { ElTySearchBox } from './ty-search-box';
+import { ElTyTable } from './ty-table';
+import { ElTyDebounce } from './ty-debounce';
+import { ElTyThrottle } from './ty-throttle';
+import { ElTyRenderTable } from './ty-render-table';
+import { ElTyInputList } from './ty-input-list';
 
 export class Searchform extends ElSearchform {}
 
@@ -17,3 +19,9 @@ export class TyDebounce extends ElTyDebounce {}
 
 /** TyThrottle Component */
 export class TyThrottle extends ElTyThrottle {}
+
+/** TyRenderTable Component */
+export class TyRenderTable extends ElTyRenderTable {}
+
+/** TyInputList Component */
+export class TyInputList extends ElTyInputList {}
