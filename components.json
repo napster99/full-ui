@@ -85,5 +85,6 @@
   "ty-debounce": "./packages/ty-debounce/index.js",
   "ty-throttle": "./packages/ty-throttle/index.js",
   "ty-render-table": "./packages/ty-render-table/index.js",
-  "ty-input-list": "./packages/ty-input-list/index.js"
+  "ty-input-list": "./packages/ty-input-list/index.js",
+  "ty-search-form": "./packages/ty-search-form/index.js"
 }

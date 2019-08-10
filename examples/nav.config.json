@@ -305,6 +305,10 @@
             {
               "path": "/ty-input-list",
               "title": "TyInputList 多行输入框"
+            },
+            {
+              "path": "/ty-search-form",
+              "title": "TySearchForm 筛选栏"
             }
           ]
         },
