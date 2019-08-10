@@ -28,7 +28,8 @@ yarn add @tuya-fe/ty-input-list
           colums: [
             {
               name: '英语',
-              value: 'a'
+              value: 'a',
+              required: true
             },
             {
               name: '德语',
@@ -58,3 +59,19 @@ yarn add @tuya-fe/ty-input-list
 ```
 
 :::
+
+### TyInputList Attributes
+
+| 参数             | 说明       | 类型   | 可选值 | 默认值 |
+| ---------------- | ---------- | ------ | ------ | ------ |
+| inputList        | 显示的数据 | Object | —      | —      |
+| inputList-title  | 显示的数据 | String | —      | —      |
+| inputList-colums | 表头       | Array  | —      | —      |
+| inputList-datas  | 数据       | Array  | —      | —      |
+
+### TyInputList Events
+
+| 事件名     | 说明                | 参数          |
+| ---------- | ------------------- | ------------- |
+| inputList  | 监听 inputList 数据 | datas         |
+| removeItem | 删除按钮的回调函数  | val, callback |
