@@ -100,9 +100,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.inputlist .el-form-item {
-  margin-bottom: 0;
-}
-</style>
