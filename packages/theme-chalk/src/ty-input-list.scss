@@ -2,7 +2,8 @@
 @import 'common/var';
 
 @include b(ty-input-list) {
-  .inputlist .el-form-item {
-    margin-bottom: 0;
-  }
+}
+
+.inputlist .el-form-item {
+  margin-bottom: 0;
 }
