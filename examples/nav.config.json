@@ -342,8 +342,8 @@
           "groupName": "列表系列",
           "list": [
             {
-              "path": "/ty-render-table",
-              "title": "TyRenderTable 表格"
+              "path": "/ty-search-list",
+              "title": "TySearchList 搜索列表页"
             }
           ]
         },

@@ -1,7 +1,5 @@
 ## TyInputList 多行输入框
 
-xxx
-
 ### 安装
 
 ```shell

@@ -8,6 +8,7 @@ import { ElTyRenderTable } from './ty-render-table';
 import { ElTyInputList } from './ty-input-list';
 import { ElTySearchForm } from './ty-search-form';
 
+import { TySearchList } from './ty-search-list'
 
 export class Searchform extends ElSearchform {}
 
@@ -31,3 +32,6 @@ export class TyInputList extends ElTyInputList {}
 
 /** TySearchForm Component */
 export class TySearchForm extends ElTySearchForm {}
+
+/** TySearchList Component */
+export class TySearchList extends TySearchList {}
