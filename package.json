@@ -1,6 +1,6 @@
 {
   "name": "@tuya-fe/full-ui",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A Component Library for Vue.js.",
   "main": "lib/full-ui.common.js",
   "files": [
