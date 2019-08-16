@@ -73,6 +73,14 @@
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
+"@tuya-fe/ty-zsy@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-zsy/download/@tuya-fe/ty-zsy-1.0.0.tgz#27d30d7c41745e144d4ec6bf67aaae278450f866"
+  integrity sha1-J9MNfEF0XhRNTsa/Z6quJ4RQ+GY=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    vue "^2.5.11"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/@types/events/download/@types/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"

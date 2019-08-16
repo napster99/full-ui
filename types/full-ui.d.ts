@@ -11,6 +11,7 @@ import { ElTySearchForm } from './ty-search-form';
 import { TySearchList } from './ty-search-list'
 import { TyTestProcessZty } from './ty-test-process-zty'
 import { TyJiangxc } from './ty-jiangxc'
+import { TyZsy } from './ty-zsy'
 import { TyInput } from './ty-input'
 
 export class Searchform extends ElSearchform {}
@@ -44,6 +45,9 @@ export class TyTestProcessZty extends TyTestProcessZty {}
 
 /** TyJiangxc Component */
 export class TyJiangxc extends TyJiangxc {}
+
+/** TyZsy Component */
+export class TyZsy extends TyZsy {}
 
 /** TyInput Component */
 export class TyInput extends TyInput {}
