@@ -309,6 +309,10 @@
             {
               "path": "/ty-search-form",
               "title": "TySearchForm 筛选栏"
+            },
+            {
+              "path": "/ty-zsy",
+              "title": "TyZsy"
             }
           ]
         },

@@ -61,8 +61,9 @@
   "style": "lib/theme-chalk/index.css",
   "dependencies": {
     "@tuya-fe/full-ui": "^1.0.6",
-    "@tuya-fe/ty-test-process-zty": "^1.0.0",
     "@tuya-fe/ty-jiangxc": "^1.0.0",
+    "@tuya-fe/ty-test-process-zty": "^1.0.0",
+    "@tuya-fe/ty-zsy": "^1.0.0",
     "async-validator": "~1.8.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
     "deepmerge": "^1.2.0",
