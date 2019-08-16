@@ -40,13 +40,11 @@
     data() {
       return {
         input: '',
-        regExpOption:{
-          {
-            type: 'integer',
-            regExp: /input/,
-            message: '输入错误'
-          }
-        }
+        regExpOption: {
+          type: 'integer',
+          regExp: /input/,
+          message: '输入错误',
+        },
       };
     },
   };
