@@ -97,6 +97,10 @@
               "title": "Input 输入框"
             },
             {
+              "path": "/ty-input",
+              "title": "TyInput"
+            },
+            {
               "path": "/input-number",
               "title": "InputNumber 计数器"
             },
@@ -309,6 +313,10 @@
             {
               "path": "/ty-search-form",
               "title": "TySearchForm 筛选栏"
+            },
+            {
+              "path": "/ty-zsy",
+              "title": "TyZsy"
             }
           ]
         },

@@ -92,6 +92,7 @@ import TySearchList from '../packages/ty-search-list/index.js';
 import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
+import TyZsy from '../packages/ty-zsy/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -183,6 +184,7 @@ const components = [
   TyTestProcessZty,
   TyJiangxc,
   TyXk,
+  TyZsy,
   CollapseTransition
 ];
 
@@ -218,7 +220,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
-
 };
 
 /* istanbul ignore if */
@@ -323,5 +324,6 @@ export default {
   TySearchList,
   TyTestProcessZty,
   TyJiangxc,
-  TyXk
+  TyXk,
+  TyZsy
 };
