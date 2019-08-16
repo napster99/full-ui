@@ -334,6 +334,10 @@
             {
               "path": "/ty-test-process-zty",
               "title": "TyTestProcessZty"
+            },
+            {
+              "path": "/ty-jiangxc",
+              "title": "TyJiangxc"
             }
           ]
         }

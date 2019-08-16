@@ -88,5 +88,6 @@
   "ty-input-list": "./packages/ty-input-list/index.js",
   "ty-search-form": "./packages/ty-search-form/index.js",
   "ty-search-list": "./packages/ty-search-list/index.js",
-  "ty-test-process-zty": "./packages/ty-test-process-zty/index.js"
+  "ty-test-process-zty": "./packages/ty-test-process-zty/index.js",
+  "ty-jiangxc": "./packages/ty-jiangxc/index.js"
 }

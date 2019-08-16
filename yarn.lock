@@ -57,6 +57,14 @@
     resize-observer-polyfill "^1.5.0"
     throttle-debounce "^1.0.1"
 
+"@tuya-fe/ty-jiangxc@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-jiangxc/download/@tuya-fe/ty-jiangxc-1.0.0.tgz#ccf1780752011fd61d134e34842f6f83acb87632"
+  integrity sha1-zPF4B1IBH9YdE040hC9vg6y4djI=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    vue "^2.5.11"
+
 "@tuya-fe/ty-test-process-zty@^1.0.0":
   version "1.0.0"
   resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-test-process-zty/download/@tuya-fe/ty-test-process-zty-1.0.0.tgz#2de00136b917d234014290627fa5684ab7dfa82f"
