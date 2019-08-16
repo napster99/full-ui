@@ -92,6 +92,7 @@ import TySearchList from '../packages/ty-search-list/index.js';
 import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyZsy from '../packages/ty-zsy/index.js';
+import TyInput from '../packages/ty-input/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -183,6 +184,7 @@ const components = [
   TyTestProcessZty,
   TyJiangxc,
   TyZsy,
+  TyInput,
   CollapseTransition
 ];
 
@@ -323,5 +325,6 @@ export default {
   TySearchList,
   TyTestProcessZty,
   TyJiangxc,
-  TyZsy
+  TyZsy,
+  TyInput
 };
