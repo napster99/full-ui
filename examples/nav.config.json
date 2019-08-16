@@ -97,6 +97,10 @@
               "title": "Input 输入框"
             },
             {
+              "path": "/ty-input",
+              "title": "TyInput"
+            },
+            {
               "path": "/input-number",
               "title": "InputNumber 计数器"
             },
