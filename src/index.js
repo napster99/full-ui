@@ -89,6 +89,7 @@ import TyRenderTable from '../packages/ty-render-table/index.js';
 import TyInputList from '../packages/ty-input-list/index.js';
 import TySearchForm from '../packages/ty-search-form/index.js';
 import TySearchList from '../packages/ty-search-list/index.js';
+import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -177,6 +178,7 @@ const components = [
   TyInputList,
   TySearchForm,
   TySearchList,
+  TyTestProcessZty,
   CollapseTransition
 ];
 
@@ -314,5 +316,6 @@ export default {
   TyRenderTable,
   TyInputList,
   TySearchForm,
-  TySearchList
+  TySearchList,
+  TyTestProcessZty
 };

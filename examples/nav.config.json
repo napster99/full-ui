@@ -330,6 +330,10 @@
             {
               "path": "/ty-throttle",
               "title": "TyThrottle"
+            },
+            {
+              "path": "/ty-test-process-zty",
+              "title": "TyTestProcessZty"
             }
           ]
         }

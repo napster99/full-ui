@@ -44,6 +44,27 @@
     resize-observer-polyfill "^1.5.0"
     throttle-debounce "^1.0.1"
 
+"@tuya-fe/full-ui@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/full-ui/download/@tuya-fe/full-ui-1.1.0.tgz#ca3854d8102f60724f3af6a4ac0dfd32a74dd08f"
+  integrity sha1-yjhU2BAvYHJPOvakrA39MqdN0I8=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.0.6"
+    async-validator "~1.8.1"
+    babel-helper-vue-jsx-merge-props "^2.0.0"
+    deepmerge "^1.2.0"
+    normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
+
+"@tuya-fe/ty-test-process-zty@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-test-process-zty/download/@tuya-fe/ty-test-process-zty-1.0.0.tgz#2de00136b917d234014290627fa5684ab7dfa82f"
+  integrity sha1-LeABNrkX0jQBQpBif6VoSrffqC8=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    vue "^2.5.11"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/@types/events/download/@types/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -9874,6 +9895,11 @@ vue@2.5.21:
   version "2.5.21"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.5.21.tgz#3d33dcd03bb813912ce894a8303ab553699c4a85"
   integrity sha1-PTPc0Du4E5Es6JSoMDq1U2mcSoU=
+
+vue@^2.5.11:
+  version "2.6.10"
+  resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
+  integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
 
 watchpack@^1.5.0:
   version "1.6.0"
