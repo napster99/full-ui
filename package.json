@@ -62,6 +62,7 @@
   "dependencies": {
     "@tuya-fe/full-ui": "^1.0.6",
     "@tuya-fe/ty-jiangxc": "^1.0.0",
+    "@tuya-fe/ty-search-form": "^1.0.1",
     "@tuya-fe/ty-test-process-zty": "^1.0.0",
     "@tuya-fe/ty-zsy": "^1.0.0",
     "async-validator": "~1.8.1",

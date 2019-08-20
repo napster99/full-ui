@@ -1,27 +1,57 @@
 <template>
-  <div>
+  <div class="ty-search-form">
     <template v-for="(search, index) in searchOptions">
-      <template v-if="search.type === 'input'">
-        <el-input
-          :key="index"
-          v-bind="search"
-          v-model="searchForm[search.value]"
-          @input="(...args) => handleInput(search, ...args)"
-        ></el-input>
-      </template>
-      <template v-else-if="search.type === 'select'">
-        <el-select
-          :key="index"
-          v-bind="search"
-          v-model="searchForm[search.value]"
-          @change="(...args) => handleSelect(search, ...args)"
+      <el-input
+        v-if="search['search-type'] === 'input'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        v-model="searchForm[search['search-value']]"
+        @input="(...args) => handleInput(search, ...args)"
+      ></el-input>
+      <el-select
+        v-else-if="search['search-type'] === 'select'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        v-model="searchForm[search['search-value']]"
+        @change="(...args) => handleSelect(search, ...args)"
+      >
+        <el-option v-for="option in search.options" :key="option.value" v-bind="option"></el-option>
+      </el-select>
+      <el-input-number
+        v-else-if="search['search-type'] === 'number'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        v-model="searchForm[search['search-value']]"
+        @change="(...args) => handleSelect(search, ...args)"
         >
-          <el-option v-for="option in search.options" :key="option.value" v-bind="option"></el-option>
-        </el-select>
-      </template>
+      </el-input-number>
+      <el-time-select
+        v-else-if="search['search-type'] === 'timePicker'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        v-model="searchForm[search['search-value']]"
+        @change="(...args) => handleSelect(search, ...args)"
+      >
+      </el-time-select>
+      <el-date-picker
+        v-else-if="search['search-type'] === 'datePicker'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        v-model="searchForm[search['search-value']]"
+        @change="(...args) => handleSelect(search, ...args)"
+      >
+      </el-date-picker>
+      <el-button
+        v-else-if="search['search-type'] === 'button'"
+        :key="index"
+        v-bind="getBindSearch(search)"
+        @click="(...args) => handleBtnClick(search, ...args)"
+      >
+        {{ search['button-text'] }}
+      </el-button>
     </template>
-    <el-button size="small" type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
-    <el-button size="small" type="warning" @click="handleReset">重置</el-button>
+    <el-button v-if="!noSearch" size="small" type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
+    <el-button v-if="!noReset" size="small" type="warning" @click="handleReset">重置</el-button>
   </div>
 </template>
 
@@ -31,6 +61,12 @@ import { fistLetterUpper, deepClone } from './utils';
 
 export default {
   name: 'TySearchForm',
+  /**
+   * @property form 筛选框表单
+   * @property options 筛选框配置
+   * @property noSearch 不显示搜索按钮
+   * @property noReset 不显示重置按钮
+   */
   props: {
     form: {
       required: true,
@@ -40,6 +76,16 @@ export default {
     options: {
       required: false,
       type: Array
+    },
+    noSearch: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
+    noReset: {
+      required: false,
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -49,6 +95,16 @@ export default {
     };
   },
   methods: {
+    /**
+     * 获取所有能够传递的props参数
+     */
+    getBindSearch(search) {
+      const bindSearch = deepClone(search);
+      delete bindSearch['search-value'];
+      delete bindSearch.options;
+      delete bindSearch['search-type'];
+      return bindSearch;
+    },
     /**
      * @description 初始化筛选框
      */
@@ -64,7 +120,7 @@ export default {
       const options = [];
       Object.keys(this.searchForm).forEach(key => {
         let option = deepClone(defOptions.input());
-        option.value = key;
+        option['search-value'] = key;
         options.push(option);
       });
       return options;
@@ -75,17 +131,10 @@ export default {
     assignOptions() {
       const options = deepClone(this.options);
       return options.map(option => {
-        switch (options.type) {
-          case 'input': {
-            return deepClone(Object.assign(defOptions.input(), option));
-          }
-          case 'select': {
-            return deepClone(Object.assign(defOptions.select(), option));
-          }
-          default: {
-            return deepClone(Object.assign(defOptions.input(), option));
-          }
+        if (!defOptions[option['search-type']]) {
+          return deepClone(Object.assign(defOptions.input(), option));
         }
+        return deepClone(Object.assign(defOptions[option['search-type']](), option));
       });
     },
     /**
@@ -93,7 +142,7 @@ export default {
      */
     checkSearchForm() {
       this.searchOptions.forEach(search => {
-        !this.searchForm[search.value] ? this.$set(this.searchForm, search.value, '') : '';
+        !this.searchForm[search['search-value']] ? this.$set(this.searchForm, search['search-value'], '') : '';
       });
     },
     /**
@@ -117,8 +166,8 @@ export default {
      * @description 输入框事件
      */
     handleInput(search, ...args) {
-      const name = fistLetterUpper(search['value']);
-      this.$emit(`on${name}`, ...args);
+      const name = fistLetterUpper(search['search-value']);
+      this.$emit(`on${name}Change`, ...args);
 
       // TODO 防抖返回searchForm
       this.searchChange();
@@ -127,10 +176,17 @@ export default {
      * @description 选择器选择事件
      */
     handleSelect(search, ...args) {
-      const name = fistLetterUpper(search['value']);
-      this.$emit(`on${name}`, ...args);
+      const name = fistLetterUpper(search['search-value']);
+      this.$emit(`on${name}Change`, ...args);
 
       this.searchChange();
+    },
+    /**
+     * @description 按钮点击事件
+     */
+    handleBtnClick(search, ...args) {
+      const name = fistLetterUpper(search['search-value']);
+      this.$emit(`on${name}Click`, this.searchForm, ...args);
     },
     /**
      * @description 过滤器选项有更改时触发

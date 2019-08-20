@@ -4,10 +4,16 @@
 @include b(ty-search-form) {
 }
 
-.el-input + .el-input, .el-input + .el-button, .el-input + .el-select {
-  margin-left: 10px;
+.ty-search-form {
+  margin-top: -10px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
-.el-select + .el-select, .el-select + .el-input, .el-select + .el-button {
-  margin-left: 10px;
+.ty-search-form > .el-input, .ty-search-form > .el-textarea, .ty-search-form > .el-select, .ty-search-form > .el-input-number, .ty-search-form > .el-button {
+  margin: 10px 5px 0 5px;
+}
+
+/deep/ .el-button + .el-button {
+  margin-left: 5px;
 }
