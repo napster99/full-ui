@@ -1,17 +1,23 @@
-export const input = {
-  type: 'input',
-  value: 'input',
-  size: 'small',
-  width: '10em',
-  placeholder: '请输入',
-  '@input': () => {}
+export const input = () => {
+  return {
+    type: 'input',
+    value: 'input',
+    size: 'small',
+    placeholder: '请输入',
+    style: {
+      width: '10em'
+    }
+  };
 };
 
-export const select = {
-  type: 'select',
-  value: 'select',
-  size: 'small',
-  width: '10em',
-  placeholder: '请选择',
-  '@select': () => {}
+export const select = () => {
+  return {
+    type: 'select',
+    value: 'select',
+    size: 'small',
+    placeholder: '请选择',
+    style: {
+      width: '10em'
+    }
+  };
 };

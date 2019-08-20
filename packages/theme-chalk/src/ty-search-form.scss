@@ -4,9 +4,10 @@
 @include b(ty-search-form) {
 }
 
-.el-input+.el-input {
+.el-input + .el-input, .el-input + .el-button, .el-input + .el-select {
   margin-left: 10px;
 }
-.el-input+.el-button {
+
+.el-select + .el-select, .el-select + .el-input, .el-select + .el-button {
   margin-left: 10px;
 }

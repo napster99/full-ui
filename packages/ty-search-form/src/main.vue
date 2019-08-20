@@ -1,15 +1,23 @@
 <template>
   <div>
-    <template v-for="(filter, index) in filterOptions">
-      <template v-if="filter.type === 'input'">
+    <template v-for="(search, index) in searchOptions">
+      <template v-if="search.type === 'input'">
         <el-input
           :key="index"
-          v-model="filterForm[filter.value]"
-          :placeholder="filter.placeholder"
-          :size="filter.size"
-          :style="'width:' + filter.width"
-          @input="(...args) => handleInput(filter, ...args)"
+          v-bind="search"
+          v-model="searchForm[search.value]"
+          @input="(...args) => handleInput(search, ...args)"
         ></el-input>
+      </template>
+      <template v-else-if="search.type === 'select'">
+        <el-select
+          :key="index"
+          v-bind="search"
+          v-model="searchForm[search.value]"
+          @change="(...args) => handleSelect(search, ...args)"
+        >
+          <el-option v-for="option in search.options" :key="option.value" v-bind="option"></el-option>
+        </el-select>
       </template>
     </template>
     <el-button size="small" type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
@@ -36,25 +44,26 @@ export default {
   },
   data() {
     return {
-      filterForm: {},
-      filterOptions: []
+      searchForm: {},
+      searchOptions: []
     };
   },
   methods: {
     /**
      * @description 初始化筛选框
      */
-    initFilterForm() {
-      this.filterForm = deepClone(this.form);
-      this.filterOptions = this.options ? this.assignOptions() : this.setDefOptions();
+    initSearchForm() {
+      this.searchForm = deepClone(this.form);
+      this.searchOptions = this.options ? this.assignOptions() : this.setDefOptions();
+      this.checkSearchForm();
     },
     /**
      * @description 如果没有传入options，默认全部使用input类型的筛选框
      */
     setDefOptions() {
       const options = [];
-      Object.keys(this.filterForm).forEach(key => {
-        let option = deepClone(defOptions.input);
+      Object.keys(this.searchForm).forEach(key => {
+        let option = deepClone(defOptions.input());
         option.value = key;
         options.push(option);
       });
@@ -68,49 +77,70 @@ export default {
       return options.map(option => {
         switch (options.type) {
           case 'input': {
-            return deepClone(Object.assign(defOptions.input, option));
+            return deepClone(Object.assign(defOptions.input(), option));
           }
           case 'select': {
-            return deepClone(Object.assign(defOptions.select, option));
+            return deepClone(Object.assign(defOptions.select(), option));
           }
           default: {
-            return deepClone(Object.assign(defOptions.input, option));
+            return deepClone(Object.assign(defOptions.input(), option));
           }
         }
       });
     },
     /**
+     * @description 如果传入的form参数不全，但是传入了options，则根据options自动补全
+     */
+    checkSearchForm() {
+      this.searchOptions.forEach(search => {
+        !this.searchForm[search.value] ? this.$set(this.searchForm, search.value, '') : '';
+      });
+    },
+    /**
      * @description 搜索事件
+     * @emits search 暴露搜索事件
      */
     handleSearch() {
-      this.$emit('search', this.filterForm);
+      this.$emit('search', this.searchForm);
     },
     /**
      * @description 重置事件
+     * @emits reset 暴露重置事件 @argument 重置之前searchForm快照
      */
     handleReset() {
-      this.initFilterForm();
+      const formSnapshoot = deepClone(this.searchForm);
+      this.initSearchForm();
       this.handleSearch();
+      this.$emit('reset', formSnapshoot);
     },
     /**
      * @description 输入框事件
      */
-    handleInput(filter, ...args) {
-      const name = fistLetterUpper(filter['value']);
+    handleInput(search, ...args) {
+      const name = fistLetterUpper(search['value']);
       this.$emit(`on${name}`, ...args);
 
-      // TODO 防抖返回filterForm
-      this.filterChange();
+      // TODO 防抖返回searchForm
+      this.searchChange();
     },
     /**
-     * 过滤器选项有更改时触发
+     * @description 选择器选择事件
      */
-    filterChange() {
-      this.$emit('change', this.filterForm);
+    handleSelect(search, ...args) {
+      const name = fistLetterUpper(search['value']);
+      this.$emit(`on${name}`, ...args);
+
+      this.searchChange();
+    },
+    /**
+     * @description 过滤器选项有更改时触发
+     */
+    searchChange() {
+      this.$emit('change', this.searchForm);
     }
   },
   mounted() {
-    this.initFilterForm();
+    this.initSearchForm();
   }
 };
 </script>
