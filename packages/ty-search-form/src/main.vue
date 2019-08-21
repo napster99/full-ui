@@ -41,6 +41,13 @@
         @change="(...args) => handleSelect(search, ...args)"
       >
       </el-date-picker>
+      <div
+        v-else-if="search['search-type'] === 'render'"
+        :key="index"
+        class="render-search"
+      >
+        <render-search :render="search['render']"></render-search>
+      </div>
       <el-button
         v-else-if="search['search-type'] === 'button'"
         :key="index"
@@ -56,6 +63,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import * as defOptions from './enum';
 import { fistLetterUpper, deepClone } from './utils';
 
@@ -88,6 +96,13 @@ export default {
       default: false
     }
   },
+  components: {
+    RenderSearch: {
+      render(h) {
+        return this.$attrs.render.call(this, h);
+      }
+    }
+  },
   data() {
     return {
       searchForm: {},
@@ -111,6 +126,7 @@ export default {
     initSearchForm() {
       this.searchForm = deepClone(this.form);
       this.searchOptions = this.options ? this.assignOptions() : this.setDefOptions();
+      // this.checkRenderSearch();
       this.checkSearchForm();
     },
     /**
@@ -143,6 +159,24 @@ export default {
     checkSearchForm() {
       this.searchOptions.forEach(search => {
         !this.searchForm[search['search-value']] ? this.$set(this.searchForm, search['search-value'], '') : '';
+      });
+    },
+    /**
+     * @description 如果配置中存在render函数，需要注册
+     */
+    checkRenderSearch() {
+      this.searchOptions.forEach(search => {
+        if (search['search-value'] === 'render') {
+          this.newRenderComp(search['render-name'], search['render-fn']);
+        }
+      });
+    },
+    /**
+     * @description 注册render函数
+     */
+    newRenderComp(name, renderFn) {
+      Vue.component(name, {
+        render: renderFn
       });
     },
     /**

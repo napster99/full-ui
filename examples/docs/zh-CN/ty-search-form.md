@@ -240,11 +240,96 @@ export default {
 ```
 :::
 
+### 使用render组件
+
+如果现有的配置无法满足需求，也可以使用render组件，render组件同样需要对组件内部进行一些控制。
+
+:::demo
+```html
+<ty-search-form
+  :form="searchForm"
+  :options="options"
+  @change="handleChange"
+  @reset="handleReset"
+></ty-search-form>
+
+<script>
+export default {
+  data() {
+    return {
+      // 传入了options的情况下，searchForm会自动补全表单字段
+      searchForm: {},
+      options: [
+        {
+          'search-type': 'render',
+          'search-value': 'renderSelect',
+          render: function(h) {
+            const parent = this.$parent;
+            const searchForm = parent.searchForm;
+
+            const options = [
+              { value: 'option1', label: '选项1' },
+              { value: 'option2', label: '选项2' }
+            ];
+
+            return (
+              <el-select 
+                value={searchForm.renderSelect} 
+                onChange={(...args) => {
+                  searchForm.renderSelect = args[0];
+                  parent.handleSelect({'search-value': 'renderSelect'}, ...args);
+                }} 
+                style="width: 12em;" 
+                size="small" 
+                placeholder="这是一个render select"
+              >
+                { options.map(option => (<el-option value={option.value} label={option.label}></el-option>)) }
+              </el-select>
+            );
+          }
+        },
+        {
+          'search-type': 'render',
+          'search-value': 'renderInput',
+          render: function(h) {
+            const parent = this.$parent;
+            const searchForm = parent.searchForm;
+
+            return (
+              <el-input
+                value={searchForm.renderInput}
+                onInput={(...args) => {
+                  searchForm.renderInput = args[0];
+                  parent.handleInput({'search-value': 'renderInput'}, ...args);
+                }}
+                style="width: 12em;"
+                size="small"
+                placeholder="这是一个render input"
+              ></el-input>
+            );
+          }
+        }
+      ]
+    }
+  },
+  methods: {
+    handleReset(form) {
+      console.log('重置之前的表单快照', form);
+    },
+    handleChange(val) {
+      console.log(val);
+    }
+  }
+}
+</script>
+```
+:::
+
 ### Attributes
 | 参数                  | 说明                                      | 类型                        | 可选值  | 默认值 |
 | --------------------- | ---------------------------------------- | --------------------------- | ---- | ----- |
 | form                  | 筛选数据，对象的每一个key对应一个筛选框的v-model(当options已设置时，可不传对应的key值) | object                       | —    | —     |
-| options               | 筛选框配置，每一项对应一个筛选框的配置，配置项说明：{ search-type, search-value, button-text, options, ...args} `'search-type'`表示筛选框的类型，可选[`input`,`select`,`number`,`timePicker`,`datePicker`,`button`]；`search-value`表示筛选框对应的v-model名称；`options`在`search-type="select"`时有效，表示选择器的选项；``button-text`在`search-type="button"`时有效，表示按钮的文案；`args`表示更多其他配置，这些配置会传递到基本组件里面，如`placeholder="hello_world"`会给筛选框设置一个灰色提示 | array | —    | — |
+| options               | 筛选框配置，每一项对应一个筛选框的配置，配置项说明：{ search-type, search-value, button-text, options, ...args} `'search-type'`表示筛选框的类型，可选[`input`,`select`,`number`,`timePicker`,`datePicker`,`button`, `render`]；`search-value`表示筛选框对应的v-model名称；`options`在`search-type="select"`时有效，表示选择器的选项；`button-text`在`search-type="button"`时有效，表示按钮的文案；`args`表示更多其他配置，这些配置会传递到基本组件里面，如`placeholder="hello_world"`会给筛选框设置一个灰色提示；`render`在`search-type="render"`时有效，注入一个render函数 | array | —    | — |
 | no-search              | 不展示搜索按钮                              | boolean                    | true/false | false |
 | no-reset               | 不展示重置按钮                              | boolean                    | true/false | false |
 
