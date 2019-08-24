@@ -103,11 +103,6 @@ export default {
       }
     }
   },
-  watch: {
-    options(val) {
-      console.log(val);
-    }
-  },
   data() {
     return {
       searchForm: {},
