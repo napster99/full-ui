@@ -14,7 +14,7 @@ yarn add @tuya-fe/ty-search-form
 
 :::demo
 ```html
-<ty-search-form :form="searchForm" @search="handleSearch" @change="handleChange"></ty-search-form>
+<ty-search-form v-model="searchForm" @search="handleSearch" @change="handleChange"></ty-search-form>
 
 <script>
 export default {
@@ -27,11 +27,11 @@ export default {
     }
   },
   methods: {
-    handleSearch(searchForm) {
-      console.log(searchForm);
+    handleSearch() {
+      console.log(this.searchForm);
     },
-    handleChange(searchForm) {
-      console.log(searchForm);
+    handleChange() {
+      console.log(this.searchForm);
     }
   }
 }
@@ -46,7 +46,7 @@ export default {
 :::demo
 ```html
 <ty-search-form
-  :form="searchForm"
+  v-model="searchForm"
   :options="options"
   @onHelloChange="handleHello"
   @onColorChange="handleColor"
@@ -123,17 +123,17 @@ export default {
     }
   },
   methods: {
-    handleChange(form) {
-      console.log(form)
+    handleChange() {
+      console.log(this.searchForm);
     },
     handleHello(val) {
-      console.log(val)
+      console.log(val);
     },
     handleColor(val) {
-      console.log(val)
+      console.log(val);
     },
-    handleBtn(form, event) {
-      console.log(form, event)
+    handleBtn(event) {
+      console.log(event);
     }
   }
 }
@@ -149,7 +149,7 @@ export default {
 ```html
 <ty-search-form
   ref="linkageRef"
-  :form="searchForm"
+  v-model="searchForm"
   :options="options"
   @onProvinceChange="handleProvince"
   @onCityChange="handleCity"
@@ -217,6 +217,8 @@ export default {
       this.setProvinceOpt();
     },
     setProvinceOpt() {
+      this.options.find(item => item['search-value'] === 'province').options = [{}, {}];
+
       const province = this.$refs['linkageRef'].searchOptions.find(item => item['search-value'] === 'province');
       province ? province.options = provinceOpt : '';
     },
@@ -242,13 +244,14 @@ export default {
 
 ### 使用render组件
 
-如果现有的配置无法满足需求，也可以使用render组件，render组件同样需要对组件内部进行一些控制。
+如果现有的配置无法满足需求，也可以使用render组件，缺点是render的输入框数据变更时，ty-search-form无法暴露@change钩子，需要自己定义。
 
 :::demo
 ```html
 <ty-search-form
-  :form="searchForm"
+  v-model="searchForm"
   :options="options"
+  @search="handleSearch"
   @change="handleChange"
   @reset="handleReset"
 ></ty-search-form>
@@ -257,16 +260,22 @@ export default {
 export default {
   data() {
     return {
-      // 传入了options的情况下，searchForm会自动补全表单字段
-      searchForm: {},
+      searchForm: {
+        input: '这不是 render input',
+        renderSelect: '',
+        renderInput: '',
+      },
       options: [
         {
+          'search-type': 'input',
+          'search-value': 'input',
+          style: {
+            width: '14em'
+          }
+        },
+        {
           'search-type': 'render',
-          'search-value': 'renderSelect',
           render: function(h) {
-            const parent = this.$parent;
-            const searchForm = parent.searchForm;
-
             const options = [
               { value: 'option1', label: '选项1' },
               { value: 'option2', label: '选项2' }
@@ -274,11 +283,8 @@ export default {
 
             return (
               <el-select 
-                value={searchForm.renderSelect} 
-                onChange={(...args) => {
-                  searchForm.renderSelect = args[0];
-                  parent.handleSelect({'search-value': 'renderSelect'}, ...args);
-                }} 
+                value={this.searchForm.renderSelect} 
+                onChange={val => this.searchForm.renderSelect = val} 
                 style="width: 12em;" 
                 size="small" 
                 placeholder="这是一个render select"
@@ -290,18 +296,11 @@ export default {
         },
         {
           'search-type': 'render',
-          'search-value': 'renderInput',
           render: function(h) {
-            const parent = this.$parent;
-            const searchForm = parent.searchForm;
-
             return (
               <el-input
-                value={searchForm.renderInput}
-                onInput={(...args) => {
-                  searchForm.renderInput = args[0];
-                  parent.handleInput({'search-value': 'renderInput'}, ...args);
-                }}
+                value={this.searchForm.renderInput}
+                onInput={val => this.searchForm.renderInput = val}
                 style="width: 12em;"
                 size="small"
                 placeholder="这是一个render input"
@@ -313,8 +312,12 @@ export default {
     }
   },
   methods: {
-    handleReset(form) {
-      console.log('重置之前的表单快照', form);
+    handleSearch() {
+      console.log(this.searchForm);
+    },
+    handleReset(form, perForm) {
+      console.log('重置后的表单::', form);
+      console.log('重置之前的表单快照::', perForm);
     },
     handleChange(val) {
       console.log(val);
@@ -328,7 +331,7 @@ export default {
 ### Attributes
 | 参数                  | 说明                                      | 类型                        | 可选值  | 默认值 |
 | --------------------- | ---------------------------------------- | --------------------------- | ---- | ----- |
-| form                  | 筛选数据，对象的每一个key对应一个筛选框的v-model(当options已设置时，可不传对应的key值) | object                       | —    | —     |
+| v-model                  | 筛选数据，对象的每一个key对应一个筛选框的v-model(当options已设置时，可不传对应的key值) | object                       | —    | —     |
 | options               | 筛选框配置，每一项对应一个筛选框的配置，配置项说明：{ search-type, search-value, button-text, options, ...args} `'search-type'`表示筛选框的类型，可选[`input`,`select`,`number`,`timePicker`,`datePicker`,`button`, `render`]；`search-value`表示筛选框对应的v-model名称；`options`在`search-type="select"`时有效，表示选择器的选项；`button-text`在`search-type="button"`时有效，表示按钮的文案；`args`表示更多其他配置，这些配置会传递到基本组件里面，如`placeholder="hello_world"`会给筛选框设置一个灰色提示；`render`在`search-type="render"`时有效，注入一个render函数 | array | —    | — |
 | no-search              | 不展示搜索按钮                              | boolean                    | true/false | false |
 | no-reset               | 不展示重置按钮                              | boolean                    | true/false | false |
@@ -338,6 +341,6 @@ export default {
 | -------------- | -------------------------------------------    | ---------------------------------------- |
 | search         | 点击搜索按钮                                     | form，当前searchForm数据  |
 | change         | 筛选框变更事件，某一个筛选框变化时触发               | form，当前searchForm数据 |
-| reset          | 点击重置按钮                                     | preForm，重置之前的数据快照 |
+| reset          | 点击重置按钮                                     | [form, preForm]，当前searchForm数据，重置之前的数据快照 |
 | on[key]Change  | 具体的某个筛选框修改的回调，key是该筛选框的v-model名称 | value，当前筛选框更改的数据 |
-| on[key]Click   | 具体的某个自定义按钮点击的回调，key是该按钮的标识      | 该事件有两个参数：分别是当前searchForm数据和event对象 |
+| on[key]Click   | 具体的某个自定义按钮点击的回调，key是该按钮的标识      | event |

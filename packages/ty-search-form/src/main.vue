@@ -63,20 +63,19 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import * as defOptions from './enum';
 import { fistLetterUpper, deepClone } from './utils';
 
 export default {
   name: 'TySearchForm',
   /**
-   * @property form 筛选框表单
+   * @property value 筛选框表单
    * @property options 筛选框配置
    * @property noSearch 不显示搜索按钮
    * @property noReset 不显示重置按钮
    */
   props: {
-    form: {
+    value: {
       required: true,
       type: Object,
       default: {}
@@ -99,14 +98,22 @@ export default {
   components: {
     RenderSearch: {
       render(h) {
-        return this.$attrs.render.call(this, h);
+        const target = this.$parent.$parent;
+        return this.$attrs.render.call(target, h);
       }
+    }
+  },
+  watch: {
+    options(val) {
+      console.log(val);
     }
   },
   data() {
     return {
       searchForm: {},
-      searchOptions: []
+      searchOptions: [],
+      // 首次渲染组件的表单，作为reset时的参照
+      resetForm: {}
     };
   },
   methods: {
@@ -124,9 +131,8 @@ export default {
      * @description 初始化筛选框
      */
     initSearchForm() {
-      this.searchForm = deepClone(this.form);
+      this.searchForm = deepClone(this.resetForm);
       this.searchOptions = this.options ? this.assignOptions() : this.setDefOptions();
-      // this.checkRenderSearch();
       this.checkSearchForm();
     },
     /**
@@ -162,39 +168,22 @@ export default {
       });
     },
     /**
-     * @description 如果配置中存在render函数，需要注册
-     */
-    checkRenderSearch() {
-      this.searchOptions.forEach(search => {
-        if (search['search-value'] === 'render') {
-          this.newRenderComp(search['render-name'], search['render-fn']);
-        }
-      });
-    },
-    /**
-     * @description 注册render函数
-     */
-    newRenderComp(name, renderFn) {
-      Vue.component(name, {
-        render: renderFn
-      });
-    },
-    /**
      * @description 搜索事件
      * @emits search 暴露搜索事件
      */
     handleSearch() {
-      this.$emit('search', this.searchForm);
+      this.$emit('search', this.emitSearchForm());
     },
     /**
      * @description 重置事件
      * @emits reset 暴露重置事件 @argument 重置之前searchForm快照
      */
     handleReset() {
-      const formSnapshoot = deepClone(this.searchForm);
+      const formSnapshoot = deepClone(this.emitSearchForm());
       this.initSearchForm();
       this.handleSearch();
-      this.$emit('reset', formSnapshoot);
+      this.$emit('input', deepClone(this.resetForm));
+      this.$emit('reset', deepClone(this.resetForm), formSnapshoot);
     },
     /**
      * @description 输入框事件
@@ -220,16 +209,40 @@ export default {
      */
     handleBtnClick(search, ...args) {
       const name = fistLetterUpper(search['search-value']);
-      this.$emit(`on${name}Click`, this.searchForm, ...args);
+      this.$emit(`on${name}Click`, ...args);
     },
     /**
      * @description 过滤器选项有更改时触发
      */
     searchChange() {
-      this.$emit('change', this.searchForm);
+      const emitSearchForm = this.emitSearchForm();
+      this.$emit('input', emitSearchForm);
+      this.$emit('change', emitSearchForm);
+    },
+    /**
+     * @description 为render函数做的兼容，导出的searchForm内容为组件外部的render对象及组件内部对象的合并对象
+     */
+    emitSearchForm() {
+      const searchForm = {};
+      this.searchOptions.forEach(option => {
+        switch (option['search-type']) {
+          case 'render': {
+            break;
+          }
+          case 'button': {
+            break;
+          }
+          default: {
+            searchForm[option['search-value']] = this.searchForm[option['search-value']];
+            break;
+          }
+        };
+      });
+      return Object.assign(this.value, searchForm);
     }
   },
   mounted() {
+    this.resetForm = deepClone(this.value);
     this.initSearchForm();
   }
 };

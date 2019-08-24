@@ -16,7 +16,7 @@ tg page 1 pagename.vue
     <el-container>
       <el-header>
         <ty-search-form
-          :form="filterForm"
+          v-model="searchForm"
           @search="handleSearch"
           @change="handleChange"
         ></ty-search-form>
@@ -39,7 +39,7 @@ tg page 1 pagename.vue
   export default {
     data() {
       return {
-        filterForm: {
+        searchForm: {
           hello: '',
           world: 'world'
         },
@@ -112,11 +112,11 @@ tg page 1 pagename.vue
       };
     },
     methods: {
-      handleSearch(filterForm) {
-        console.log(filterForm);
+      handleSearch() {
+        console.log(this.searchForm);
       },
-      handleChange(filterForm) {
-        console.log(filterForm);
+      handleChange() {
+        console.log(this.searchForm);
       },
       async search(pageIndex) {
         this.pageInfo.pageIndex = pageIndex || 1;
