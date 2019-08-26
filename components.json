@@ -92,5 +92,6 @@
   "ty-jiangxc": "./packages/ty-jiangxc/index.js",
   "ty-xk": "./packages/ty-xk/index.js",
   "ty-zsy": "./packages/ty-zsy/index.js",
-  "ty-input": "./packages/ty-input/index.js"
+  "ty-input": "./packages/ty-input/index.js",
+  "ty-render-form": "./packages/ty-render-form/index.js"
 }

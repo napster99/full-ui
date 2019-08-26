@@ -14,6 +14,7 @@ import { TyJiangxc } from './ty-jiangxc';
 import { TyXk } from './ty-xk';
 import { TyZsy } from './ty-zsy';
 import { TyInput } from './ty-input';
+import { TyRenderForm } from './ty-render-form'
 
 export class Searchform extends ElSearchform {}
 
@@ -55,3 +56,6 @@ export class TyZsy extends TyZsy {}
 
 /** TyInput Component */
 export class TyInput extends TyInput {}
+
+/** TyRenderForm Component */
+export class TyRenderForm extends TyRenderForm {}

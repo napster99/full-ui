@@ -86,6 +86,7 @@ import TyTable from '../packages/ty-table/index.js';
 import TyDebounce from '../packages/ty-debounce/index.js';
 import TyThrottle from '../packages/ty-throttle/index.js';
 import TyRenderTable from '../packages/ty-render-table/index.js';
+import TyRenderForm from '../packages/ty-render-form/index.js';
 import TyInputList from '../packages/ty-input-list/index.js';
 import TySearchForm from '../packages/ty-search-form/index.js';
 import TySearchList from '../packages/ty-search-list/index.js';
@@ -179,6 +180,7 @@ const components = [
   TyDebounce,
   TyThrottle,
   TyRenderTable,
+  TyRenderForm,
   TyInputList,
   TySearchForm,
   TySearchList,
@@ -222,7 +224,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
-
 };
 
 /* istanbul ignore if */
@@ -322,6 +323,7 @@ export default {
   TyDebounce,
   TyThrottle,
   TyRenderTable,
+  TyRenderForm,
   TyInputList,
   TySearchForm,
   TySearchList,
