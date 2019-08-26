@@ -52,6 +52,7 @@ export default {
   @onColorChange="handleColor"
   @change="handleChange"
   @onBtnClick="handleBtn"
+  @search="handleSearch"
 ></ty-search-form>
 
 <script>
@@ -134,6 +135,9 @@ export default {
     },
     handleBtn(event) {
       console.log(event);
+    },
+    handleSearch() {
+      console.log(this.searchForm);
     }
   }
 }
@@ -148,11 +152,12 @@ export default {
 :::demo
 ```html
 <ty-search-form
-  ref="linkageRef"
   v-model="searchForm"
   :options="options"
+  :on-render="onRender"
   @onProvinceChange="handleProvince"
   @onCityChange="handleCity"
+  @search="handleSearch"
   @reset="handleReset"
 ></ty-search-form>
 
@@ -208,26 +213,42 @@ export default {
           placeholder: '请选择市',
           options: []
         }
-      ]
+      ],
+      // ty-search-form组件内部的钩子
+      renderForm: {}
     }
   },
   methods: {
-    handleReset(form) {
-      console.log('重置之前的表单快照', form);
+    handleSearch(form) {
+      console.log(form);
+    },
+    onRender(form, options) {
+      this.renderForm = { form, options };
+    },
+    handleReset(form, preForm) {
+      console.log('重置后的表单::', form);
+      console.log('重置之前的表单快照::', preForm);
       this.setProvinceOpt();
     },
     setProvinceOpt() {
-      this.options.find(item => item['search-value'] === 'province').options = [{}, {}];
-
-      const province = this.$refs['linkageRef'].searchOptions.find(item => item['search-value'] === 'province');
-      province ? province.options = provinceOpt : '';
+      // 赋值省下拉选框
+      this.renderForm.options.forEach(item => {
+        if (item['search-value'] === 'province') {
+          this.$set(item, 'options', provinceOpt);
+        }
+      });
     },
     setCityOpt(provinceId) {
-      const city = this.$refs['linkageRef'].searchOptions.find(item => item['search-value'] === 'city');
-      city ? city.options = cityOpt.filter(item => item.provinceId === provinceId) : '';
+      const filterCityOpt = cityOpt.filter(item => item.provinceId === provinceId);
+      // 赋值市下拉选框
+      this.renderForm.options.forEach(item => {
+        if (item['search-value'] === 'city') {
+          this.$set(item, 'options', filterCityOpt);
+        }
+      });
     },
     handleProvince(val) {
-      this.$refs['linkageRef'].searchForm.city = '';
+      this.renderForm.form.city = '';
       this.setCityOpt(val);
     },
     handleCity(val) {
@@ -315,9 +336,9 @@ export default {
     handleSearch() {
       console.log(this.searchForm);
     },
-    handleReset(form, perForm) {
+    handleReset(form, preForm) {
       console.log('重置后的表单::', form);
-      console.log('重置之前的表单快照::', perForm);
+      console.log('重置之前的表单快照::', preForm);
     },
     handleChange(val) {
       console.log(val);
@@ -335,6 +356,7 @@ export default {
 | options               | 筛选框配置，每一项对应一个筛选框的配置，配置项说明：{ search-type, search-value, button-text, options, ...args} `'search-type'`表示筛选框的类型，可选[`input`,`select`,`number`,`timePicker`,`datePicker`,`button`, `render`]；`search-value`表示筛选框对应的v-model名称；`options`在`search-type="select"`时有效，表示选择器的选项；`button-text`在`search-type="button"`时有效，表示按钮的文案；`args`表示更多其他配置，这些配置会传递到基本组件里面，如`placeholder="hello_world"`会给筛选框设置一个灰色提示；`render`在`search-type="render"`时有效，注入一个render函数 | array | —    | — |
 | no-search              | 不展示搜索按钮                              | boolean                    | true/false | false |
 | no-reset               | 不展示重置按钮                              | boolean                    | true/false | false |
+| on-render              | 组件数据渲染后的钩子，钩子接受两个参数，表单数据和表单配置| function             | —        | —    |
 
 ### Events
 | 事件名称           | 说明                                         | 回调参数                                     |

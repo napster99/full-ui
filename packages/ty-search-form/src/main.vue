@@ -73,6 +73,8 @@ export default {
    * @property options 筛选框配置
    * @property noSearch 不显示搜索按钮
    * @property noReset 不显示重置按钮
+   * @property onRender 组件的表单配置加载完毕后的钩子
+   - @returns 钩子接受两个参数，表单数据和表单配置
    */
   props: {
     value: {
@@ -93,6 +95,11 @@ export default {
       required: false,
       type: Boolean,
       default: false
+    },
+    onRender: {
+      required: false,
+      type: Function,
+      default: () => {}
     }
   },
   components: {
@@ -129,6 +136,7 @@ export default {
       this.searchForm = deepClone(this.resetForm);
       this.searchOptions = this.options ? this.assignOptions() : this.setDefOptions();
       this.checkSearchForm();
+      this.onRender(this.searchForm, this.searchOptions);
     },
     /**
      * @description 如果没有传入options，默认全部使用input类型的筛选框
