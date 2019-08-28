@@ -65,10 +65,10 @@
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
-"@tuya-fe/ty-render-form@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-render-form/download/@tuya-fe/ty-render-form-0.1.3.tgz#43309650814376f653725cb3467780754a41d387"
-  integrity sha1-QzCWUIFDdvZTclyzRneAdUpB04c=
+"@tuya-fe/ty-render-form@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-render-form/download/@tuya-fe/ty-render-form-0.1.4.tgz#b920fc9aa30f4e4c15b25967e0afb5a0fb753690"
+  integrity sha1-uSD8mqMPTkwVslln4K+1oPt1NpA=
   dependencies:
     "@tuya-fe/full-ui" "^1.1.0"
     core-js "^2.6.5"
