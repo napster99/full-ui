@@ -57,6 +57,16 @@
     resize-observer-polyfill "^1.5.0"
     throttle-debounce "^1.0.1"
 
+"@tuya-fe/ty-draggable-board@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-draggable-board/download/@tuya-fe/ty-draggable-board-1.0.4.tgz#0024ba4df911f4ef208cb90a68829add97355f5c"
+  integrity sha1-ACS6TfkR9O8gjLkKaIKa3Zc1X1w=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    node-sass "^4.12.0"
+    vue "^2.5.11"
+    vuedraggable "^2.23.0"
+
 "@tuya-fe/ty-jiangxc@^1.0.0":
   version "1.0.0"
   resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-jiangxc/download/@tuya-fe/ty-jiangxc-1.0.0.tgz#ccf1780752011fd61d134e34842f6f83acb87632"
@@ -8822,6 +8832,11 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
+sortablejs@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/sortablejs/download/sortablejs-1.9.0.tgz#2d1e74ae6bac2cb4ad0622908f340848969eb88d"
+  integrity sha1-LR50rmusLLStBiKQjzQISJaeuI0=
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/source-list-map/download/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
@@ -10007,6 +10022,13 @@ vue@^2.5.11, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
+
+vuedraggable@^2.23.0:
+  version "2.23.0"
+  resolved "https://registry.npm.taobao.org/vuedraggable/download/vuedraggable-2.23.0.tgz#1f4a5a601675a5dbf0d96ee61aebfffa43445262"
+  integrity sha1-H0paYBZ1pdvw2W7mGuv/+kNEUmI=
+  dependencies:
+    sortablejs "^1.9.0"
 
 watchpack@^1.5.0:
   version "1.6.0"

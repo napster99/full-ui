@@ -354,6 +354,10 @@
             {
               "path": "/ty-render-form",
               "title": "TyRenderForm 表单渲染"
+            },
+            {
+              "path": "/ty-draggable-board",
+              "title": "TyDraggableBoard"
             }
           ]
         }

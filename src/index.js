@@ -86,7 +86,6 @@ import TyTable from '../packages/ty-table/index.js';
 import TyDebounce from '../packages/ty-debounce/index.js';
 import TyThrottle from '../packages/ty-throttle/index.js';
 import TyRenderTable from '../packages/ty-render-table/index.js';
-import TyRenderForm from '../packages/ty-render-form/index.js';
 import TyInputList from '../packages/ty-input-list/index.js';
 import TySearchForm from '../packages/ty-search-form/index.js';
 import TySearchList from '../packages/ty-search-list/index.js';
@@ -95,6 +94,8 @@ import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
 import TyZsy from '../packages/ty-zsy/index.js';
 import TyInput from '../packages/ty-input/index.js';
+import TyRenderForm from '../packages/ty-render-form/index.js';
+import TyDraggableBoard from '../packages/ty-draggable-board/index.js';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 
@@ -180,7 +181,6 @@ const components = [
   TyDebounce,
   TyThrottle,
   TyRenderTable,
-  TyRenderForm,
   TyInputList,
   TySearchForm,
   TySearchList,
@@ -189,6 +189,8 @@ const components = [
   TyXk,
   TyZsy,
   TyInput,
+  TyRenderForm,
+  TyDraggableBoard,
   CollapseTransition
 ];
 
@@ -224,6 +226,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
+
 };
 
 /* istanbul ignore if */
@@ -323,7 +326,6 @@ export default {
   TyDebounce,
   TyThrottle,
   TyRenderTable,
-  TyRenderForm,
   TyInputList,
   TySearchForm,
   TySearchList,
@@ -331,5 +333,7 @@ export default {
   TyJiangxc,
   TyXk,
   TyZsy,
-  TyInput
+  TyInput,
+  TyRenderForm,
+  TyDraggableBoard
 };

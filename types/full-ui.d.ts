@@ -15,6 +15,7 @@ import { TyXk } from './ty-xk';
 import { TyZsy } from './ty-zsy';
 import { TyInput } from './ty-input';
 import { TyRenderForm } from './ty-render-form'
+import { TyDraggableBoard } from './ty-draggable-board'
 
 export class Searchform extends ElSearchform {}
 
@@ -59,3 +60,6 @@ export class TyInput extends TyInput {}
 
 /** TyRenderForm Component */
 export class TyRenderForm extends TyRenderForm {}
+
+/** TyDraggableBoard Component */
+export class TyDraggableBoard extends TyDraggableBoard {}
