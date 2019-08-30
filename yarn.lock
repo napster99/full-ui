@@ -52,10 +52,10 @@
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
-"@tuya-fe/ty-draggable-board@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-draggable-board/download/@tuya-fe/ty-draggable-board-1.0.4.tgz#0024ba4df911f4ef208cb90a68829add97355f5c"
-  integrity sha1-ACS6TfkR9O8gjLkKaIKa3Zc1X1w=
+"@tuya-fe/ty-draggable-board@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-draggable-board/download/@tuya-fe/ty-draggable-board-1.0.5.tgz#105000a937cfcf84ecb6a252d5cf35cb709f58cb"
+  integrity sha1-EFAAqTfPz4TstqJS1c81y3CfWMs=
   dependencies:
     "@tuya-fe/full-ui" "^1.1.0"
     node-sass "^4.12.0"

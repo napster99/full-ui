@@ -35,10 +35,10 @@ yarn add @tuya-fe/ty-draggable-board
             listName: '第一组',
             list: [
               {
-                id: 123,
+                id: 1,
               },
               {
-                id: 1234,
+                id: 2,
               },
             ],
             total: 2,
@@ -52,10 +52,10 @@ yarn add @tuya-fe/ty-draggable-board
             listName: '第二组',
             list: [
               {
-                id: 90,
+                id: 3,
               },
               {
-                id: 34,
+                id: 4,
               },
             ],
             total: 2,
@@ -111,3 +111,5 @@ yarn add @tuya-fe/ty-draggable-board
 ```
 
 :::
+
+### 文档编辑中

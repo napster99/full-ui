@@ -17,12 +17,12 @@ const webpackConfig = {
   mode: process.env.NODE_ENV,
   entry: isProd
     ? {
-        docs: './examples/entry.js',
-        'full-ui': './src/index.js'
-      }
+      docs: './examples/entry.js',
+      'full-ui': './src/index.js'
+    }
     : isPlay
-    ? './examples/play.js'
-    : './examples/entry.js',
+      ? './examples/play.js'
+      : './examples/entry.js',
   output: {
     path: path.resolve(process.cwd(), './examples/full-ui/'),
     publicPath: process.env.CI_ENV || '',
@@ -70,7 +70,8 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.(sass|scss|css)$/,
+        // include: /node_modules\/@tuya-fe\/ty-draggable-board\/src/,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
