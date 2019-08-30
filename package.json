@@ -12,7 +12,7 @@
   "typings": "types/index.d.ts",
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
+    "build:file": "node build/bin/iconInit.js & node build/bin/i18n.js & node build/bin/version.js",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:umd": "node build/bin/build-locale.js",
@@ -64,6 +64,7 @@
     "@tuya-fe/ty-jiangxc": "^1.0.0",
     "@tuya-fe/ty-render-form": "^0.1.4",
     "@tuya-fe/ty-search-form": "^1.0.1",
+    "@tuya-fe/ty-detail-form": "^1.0.0",
     "@tuya-fe/ty-test-process-zty": "^1.0.0",
     "@tuya-fe/ty-zsy": "^1.0.0",
     "async-validator": "~1.8.1",

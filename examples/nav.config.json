@@ -315,6 +315,10 @@
               "title": "TySearchForm 筛选栏"
             },
             {
+              "path": "/ty-detail-form",
+              "title": "TyDetailForm 详情展示"
+            },
+            {
               "path": "/ty-zsy",
               "title": "TyZsy"
             }
