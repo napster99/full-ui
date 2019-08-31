@@ -319,6 +319,10 @@
               "title": "TyDetailForm 详情展示"
             },
             {
+              "path": "/ty-edit-table",
+              "title": "TyEditTable 可编辑表格"
+            },
+            {
               "path": "/ty-zsy",
               "title": "TyZsy"
             }
