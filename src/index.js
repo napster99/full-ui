@@ -99,6 +99,7 @@ import TyDraggableBoard from '@tuya-fe/ty-draggable-board';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 import TyDetailForm from '@tuya-fe/ty-detail-form';
+import TyEditTable from '@tuya-fe/ty-edit-table';
 
 const components = [
   Pagination,
@@ -193,7 +194,8 @@ const components = [
   TyInput,
   TyRenderForm,
   TyDraggableBoard,
-  CollapseTransition
+  CollapseTransition,
+  TyEditTable
 ];
 
 const install = function(Vue, opts = {}) {
@@ -337,5 +339,6 @@ export default {
   TyZsy,
   TyInput,
   TyRenderForm,
-  TyDraggableBoard
+  TyDraggableBoard,
+  TyEditTable
 };
