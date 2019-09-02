@@ -81,14 +81,16 @@ import PageHeader from '../packages/page-header/index.js';
 import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Searchform from '../packages/searchform/index.js';
-import TySearchBox from '../packages/ty-search-box/index.js';
-import TyTable from '../packages/ty-table/index.js';
 import TyDebounce from '../packages/ty-debounce/index.js';
 import TyThrottle from '../packages/ty-throttle/index.js';
 import TyRenderTable from '../packages/ty-render-table/index.js';
 import TyInputList from '../packages/ty-input-list/index.js';
+import TyMultipleInput from '@tuya-fe/ty-multiple-input';
+import TySearchBox from '../packages/ty-search-box/index.js';
 import TySearchForm from '../packages/ty-search-form/index.js';
 import TySearchList from '../packages/ty-search-list/index.js';
+import TySteps from '@tuya-fe/ty-steps';
+import TyTable from '../packages/ty-table/index.js';
 import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
@@ -184,8 +186,10 @@ const components = [
   TyThrottle,
   TyRenderTable,
   TyInputList,
+  TyMultipleInput,
   TySearchForm,
   TySearchList,
+  TySteps,
   TyTestProcessZty,
   TyJiangxc,
   TyDetailForm,
@@ -330,8 +334,10 @@ export default {
   TyThrottle,
   TyRenderTable,
   TyInputList,
+  TyMultipleInput,
   TySearchForm,
   TySearchList,
+  TySteps,
   TyTestProcessZty,
   TyDetailForm,
   TyJiangxc,

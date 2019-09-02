@@ -80,6 +80,14 @@
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
+"@tuya-fe/ty-multiple-input@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-multiple-input/download/@tuya-fe/ty-multiple-input-1.0.0.tgz#488bdf5147dfbdbdf34dc469cf165739a9e37c7b"
+  integrity sha1-SIvfUUffvb3zTcRpzxZXOanjfHs=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    vue "^2.5.11"
+
 "@tuya-fe/ty-render-form@^0.1.4":
   version "0.1.4"
   resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-render-form/download/@tuya-fe/ty-render-form-0.1.4.tgz#b920fc9aa30f4e4c15b25967e0afb5a0fb753690"
@@ -99,6 +107,14 @@
     element-ui "^2.11.1"
     node-sass "^4.12.0"
     sass-loader "^7.2.0"
+    vue "^2.5.11"
+
+"@tuya-fe/ty-steps@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-steps/download/@tuya-fe/ty-steps-2.0.1.tgz#481033ca6a0db1e9c0cd6ffdcf49ea191e914ad6"
+  integrity sha1-SBAzymoNsenAzW/9z0nqGR6RStY=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
 "@tuya-fe/ty-test-process-zty@^1.0.0":

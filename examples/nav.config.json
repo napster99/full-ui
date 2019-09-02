@@ -323,6 +323,14 @@
               "title": "TyEditTable 可编辑表格"
             },
             {
+              "path": "/ty-steps",
+              "title": "TySteps 步骤条"
+            },
+            {
+              "path": "/ty-multiple-input",
+              "title": "TyMultipleInput 多输入框"
+            },
+            {
               "path": "/ty-zsy",
               "title": "TyZsy"
             }

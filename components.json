@@ -94,5 +94,7 @@
   "ty-zsy": "./packages/ty-zsy/index.js",
   "ty-input": "./packages/ty-input/index.js",
   "ty-render-form": "./packages/ty-render-form/index.js",
-  "ty-draggable-board": "./packages/ty-draggable-board/index.js"
+  "ty-draggable-board": "./packages/ty-draggable-board/index.js",
+  "ty-steps": "./packages/ty-steps/index.js",
+  "ty-multiple-input": "./packages/ty-multiple-input/index.js"
 }
