@@ -319,6 +319,10 @@
               "title": "TyDetailForm 详情展示"
             },
             {
+              "path": "/ty-modal",
+              "title": "TyModal 业务弹窗"
+            },
+            {
               "path": "/ty-zsy",
               "title": "TyZsy"
             }

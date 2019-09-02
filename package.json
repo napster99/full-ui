@@ -64,6 +64,7 @@
     "@tuya-fe/ty-detail-form": "^1.0.0",
     "@tuya-fe/ty-draggable-board": "^1.0.5",
     "@tuya-fe/ty-jiangxc": "^1.0.0",
+    "@tuya-fe/ty-modal": "^1.1.1",
     "@tuya-fe/ty-render-form": "^0.1.4",
     "@tuya-fe/ty-search-form": "^1.0.1",
     "@tuya-fe/ty-test-process-zty": "^1.0.0",
