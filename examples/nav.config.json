@@ -331,6 +331,10 @@
               "title": "TyMultipleInput 多输入框"
             },
             {
+              "path": "/ty-message-box",
+              "title": "TyMessageBox 确认框"
+            },
+            {
               "path": "/ty-zsy",
               "title": "TyZsy"
             }

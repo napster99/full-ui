@@ -102,6 +102,7 @@ import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 import TyDetailForm from '@tuya-fe/ty-detail-form';
 import TyEditTable from '@tuya-fe/ty-edit-table';
+import TyMessageBox from '@tuya-fe/ty-message-box';
 
 const components = [
   Pagination,
@@ -234,6 +235,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$prompt = MessageBox.prompt;
   Vue.prototype.$notify = Notification;
   Vue.prototype.$message = Message;
+  Vue.prototype.$TyMessageBox = TyMessageBox;
 };
 
 /* istanbul ignore if */
