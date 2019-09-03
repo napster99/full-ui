@@ -109,10 +109,10 @@
     sass-loader "^7.2.0"
     vue "^2.5.11"
 
-"@tuya-fe/ty-steps@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-steps/download/@tuya-fe/ty-steps-2.0.1.tgz#481033ca6a0db1e9c0cd6ffdcf49ea191e914ad6"
-  integrity sha1-SBAzymoNsenAzW/9z0nqGR6RStY=
+"@tuya-fe/ty-steps@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-steps/download/@tuya-fe/ty-steps-3.0.0.tgz#4b741ccc8160dbaa74c12eeca655629103f3baa7"
+  integrity sha1-S3QczIFg26p0wS7splVikQPzuqc=
   dependencies:
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"

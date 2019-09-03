@@ -105,7 +105,7 @@ yarn add @tuya-fe/ty-steps
 :::
 
 使用 `slot` 为`icon`、`title`、`description`添加定制
-（P.S. Full-ui使用2.6.0版本Vue，不支持slot新语法，先注释了）
+（P.S. Full-ui使用2.6.0以下版本Vue，不支持slot新语法，先注释了）
 :::demo
 ```html
 <template>
