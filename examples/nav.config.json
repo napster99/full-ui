@@ -335,8 +335,12 @@
               "title": "TyMessageBox 确认框"
             },
             {
-              "path": "/ty-zsy",
-              "title": "TyZsy"
+              "path": "/ty-render-form",
+              "title": "TyRenderForm 表单渲染"
+            },
+            {
+              "path": "/ty-draggable-board",
+              "title": "TyDraggableBoard 区块拖动"
             }
           ]
         },
@@ -362,22 +366,6 @@
             {
               "path": "/ty-test-process-zty",
               "title": "TyTestProcessZty"
-            },
-            {
-              "path": "/ty-jiangxc",
-              "title": "TyJiangxc"
-            },
-            {
-              "path": "/ty-xk",
-              "title": "TyXk"
-            },
-            {
-              "path": "/ty-render-form",
-              "title": "TyRenderForm 表单渲染"
-            },
-            {
-              "path": "/ty-draggable-board",
-              "title": "TyDraggableBoard"
             }
           ]
         }
