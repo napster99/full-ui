@@ -341,6 +341,10 @@
             {
               "path": "/ty-draggable-board",
               "title": "TyDraggableBoard 区块拖动"
+            },
+            {
+              "path": "/ty-drag-location",
+              "title": "TyDragLocation 定位拖动"
             }
           ]
         },

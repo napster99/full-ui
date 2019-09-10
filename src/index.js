@@ -102,6 +102,7 @@ import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
 import TyDetailForm from '@tuya-fe/ty-detail-form';
 import TyEditTable from '@tuya-fe/ty-edit-table';
+import TyDragLocation from '@tuya-fe/ty-drag-location';
 import TyMessageBox from '@tuya-fe/ty-message-box';
 
 const components = [
@@ -196,6 +197,7 @@ const components = [
   TyDetailForm,
   TyXk,
   TyZsy,
+  TyDragLocation,
   TyInput,
   TyRenderForm,
   TyDraggableBoard,
@@ -348,5 +350,6 @@ export default {
   TyInput,
   TyRenderForm,
   TyDraggableBoard,
+  TyDragLocation,
   TyEditTable
 };
