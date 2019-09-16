@@ -94,7 +94,6 @@ import TyTable from '../packages/ty-table/index.js';
 import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
-import TyZsy from '../packages/ty-zsy/index.js';
 import TyInput from '../packages/ty-input/index.js';
 import TyRenderForm from '../packages/ty-render-form/index.js';
 import TyDraggableBoard from '@tuya-fe/ty-draggable-board';
@@ -196,7 +195,6 @@ const components = [
   TyJiangxc,
   TyDetailForm,
   TyXk,
-  TyZsy,
   TyDragLocation,
   TyInput,
   TyRenderForm,
@@ -346,7 +344,6 @@ export default {
   TyDetailForm,
   TyJiangxc,
   TyXk,
-  TyZsy,
   TyInput,
   TyRenderForm,
   TyDraggableBoard,

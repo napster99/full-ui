@@ -12,7 +12,6 @@ import { TySearchList } from './ty-search-list';
 import { TyTestProcessZty } from './ty-test-process-zty';
 import { TyJiangxc } from './ty-jiangxc';
 import { TyXk } from './ty-xk';
-import { TyZsy } from './ty-zsy';
 import { TyInput } from './ty-input';
 import { TyRenderForm } from './ty-render-form'
 import { TyDraggableBoard } from './ty-draggable-board'
@@ -53,9 +52,6 @@ export class TyJiangxc extends TyJiangxc {}
 
 /** TyXk Component */
 export class TyXk extends TyXk {}
-
-/** TyZsy Component */
-export class TyZsy extends TyZsy {}
 
 /** TyInput Component */
 export class TyInput extends TyInput {}
