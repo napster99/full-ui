@@ -64,6 +64,7 @@
     "@tuya-fe/ty-detail-form": "^1.0.0",
     "@tuya-fe/ty-draggable-board": "^1.0.5",
     "@tuya-fe/ty-edit-table": "^1.1.1",
+    "@tuya-fe/ty-image-preview": "^0.1.5",
     "@tuya-fe/ty-jiangxc": "^1.0.0",
     "@tuya-fe/ty-message-box": "^1.0.3",
     "@tuya-fe/ty-multiple-input": "^1.0.0",

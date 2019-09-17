@@ -1,5 +1,6 @@
 import navConfig from './nav.config';
 import langs from './i18n/route';
+import { LOAD_EXTRA_DOCS_MAP } from './docs.config';
 
 const LOAD_MAP = {
   'zh-CN': name => {
@@ -25,6 +26,10 @@ const LOAD_DOCS_MAP = {
 
 const loadDocs = function(lang, path) {
   return LOAD_DOCS_MAP[lang](path);
+};
+
+const loadExtraDocs = function(name) {
+  return LOAD_EXTRA_DOCS_MAP[name];
 };
 
 const registerRoute = navConfig => {
@@ -55,10 +60,16 @@ const registerRoute = navConfig => {
     });
   });
   function addRoute(page, lang, index) {
-    const component =
-      page.path === '/changelog'
-        ? load(lang, 'changelog')
-        : loadDocs(lang, page.path);
+    let component;
+    if (page.doc) {
+      component = loadExtraDocs(page.doc);
+    } else {
+      component =
+        page.path === '/changelog'
+          ? load(lang, 'changelog')
+          : loadDocs(lang, page.path);
+    }
+
     let child = {
       path: page.path.slice(1),
       meta: {

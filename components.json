@@ -95,5 +95,6 @@
   "ty-render-form": "./packages/ty-render-form/index.js",
   "ty-draggable-board": "./packages/ty-draggable-board/index.js",
   "ty-steps": "./packages/ty-steps/index.js",
-  "ty-multiple-input": "./packages/ty-multiple-input/index.js"
+  "ty-multiple-input": "./packages/ty-multiple-input/index.js",
+  "ty-image-preview": "./packages/ty-image-preview/index.js"
 }
