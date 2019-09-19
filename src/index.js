@@ -103,6 +103,7 @@ import TyDetailForm from '@tuya-fe/ty-detail-form';
 import TyEditTable from '@tuya-fe/ty-edit-table';
 import TyDragLocation from '@tuya-fe/ty-drag-location';
 import TyMessageBox from '@tuya-fe/ty-message-box';
+import TyImagePreview from '../packages/ty-image-preview';
 
 const components = [
   Pagination,
@@ -200,7 +201,8 @@ const components = [
   TyRenderForm,
   TyDraggableBoard,
   CollapseTransition,
-  TyEditTable
+  TyEditTable,
+  TyImagePreview
 ];
 
 const install = function(Vue, opts = {}) {
@@ -348,5 +350,6 @@ export default {
   TyRenderForm,
   TyDraggableBoard,
   TyDragLocation,
-  TyEditTable
+  TyEditTable,
+  TyImagePreview
 };

@@ -345,6 +345,11 @@
             {
               "path": "/ty-drag-location",
               "title": "TyDragLocation 定位拖动"
+            },
+            {
+              "doc": "ty-image-preview",
+              "path": "/ty-image-preview",
+              "title": "TyImagePreview 图片预览"
             }
           ]
         },
