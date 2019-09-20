@@ -350,6 +350,10 @@
               "doc": "ty-image-preview",
               "path": "/ty-image-preview",
               "title": "TyImagePreview 图片预览"
+            },
+            {
+              "path": "/ty-nav-tag",
+              "title": "TyNavTag 导航标签"
             }
           ]
         },

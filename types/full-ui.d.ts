@@ -18,6 +18,7 @@ import { TyDraggableBoard } from './ty-draggable-board'
 import { TySteps } from './ty-steps'
 import { TyMultipleInput } from './ty-multiple-input'
 import { TyImagePreview } from './ty-image-preview'
+import { TyNavTag } from './ty-nav-tag'
 
 export class Searchform extends ElSearchform {}
 
@@ -71,3 +72,6 @@ export class TyMultipleInput extends TyMultipleInput {}
 
 /** TyImagePreview Component */
 export class TyImagePreview extends TyImagePreview {}
+
+/** TyNavTag Component */
+export class TyNavTag extends TyNavTag {}

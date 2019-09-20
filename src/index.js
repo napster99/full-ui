@@ -96,6 +96,7 @@ import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
 import TyInput from '../packages/ty-input/index.js';
 import TyRenderForm from '../packages/ty-render-form/index.js';
+import TyNavTag from '@tuya-fe/ty-nav-tag';
 import TyDraggableBoard from '@tuya-fe/ty-draggable-board';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
@@ -199,6 +200,7 @@ const components = [
   TyDragLocation,
   TyInput,
   TyRenderForm,
+  TyNavTag,
   TyDraggableBoard,
   CollapseTransition,
   TyEditTable,
@@ -348,6 +350,7 @@ export default {
   TyXk,
   TyInput,
   TyRenderForm,
+  TyNavTag,
   TyDraggableBoard,
   TyDragLocation,
   TyEditTable,
