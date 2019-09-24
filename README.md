@@ -29,6 +29,15 @@ Vue.component(Select.name, Select);
 Vue.component(Button.name, Button);
 ```
 
+## npm脚本
+
+### add:tycomp
+添加中后台仓库已经发布的组件
+
+```bash
+yarn run add:tycomp componentName 组件中文名
+```
+
 ## Changelog
 
 Detailed changes for each release are documented in the [release notes](https://github.com/ElemeFE/element/releases).
