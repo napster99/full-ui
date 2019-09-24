@@ -108,13 +108,18 @@
   version "1.0.0"
   resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-multiple-input/download/@tuya-fe/ty-multiple-input-1.0.0.tgz#488bdf5147dfbdbdf34dc469cf165739a9e37c7b"
   integrity sha1-SIvfUUffvb3zTcRpzxZXOanjfHs=
-"@tuya-fe/ty-nav-tag@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-nav-tag/download/@tuya-fe/ty-nav-tag-1.0.0.tgz#1acf905652c4472347dc451436baae5a70ed4d12"
-  integrity sha1-Gs+QVlLERyNH3EUUNrquWnDtTRI=
   dependencies:
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
+
+"@tuya-fe/ty-nav-tag@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-nav-tag/download/@tuya-fe/ty-nav-tag-1.0.2.tgz#c7b928a986f2ef857597429e53d56ba1ad362a21"
+  integrity sha1-x7koqYby74V1l0KeU9Vroa02KiE=
+  dependencies:
+    "@tuya-fe/full-ui" "^1.1.0"
+    vue "^2.5.11"
+    vue-router "^3.0.1"
 
 "@tuya-fe/ty-render-form@^0.1.4":
   version "0.1.4"

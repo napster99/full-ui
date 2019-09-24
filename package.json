@@ -68,7 +68,7 @@
     "@tuya-fe/ty-jiangxc": "^1.0.0",
     "@tuya-fe/ty-message-box": "^1.0.3",
     "@tuya-fe/ty-multiple-input": "^1.0.0",
-    "@tuya-fe/ty-nav-tag": "^1.0.0",
+    "@tuya-fe/ty-nav-tag": "^1.0.2",
     "@tuya-fe/ty-render-form": "^0.1.4",
     "@tuya-fe/ty-search-form": "^1.0.1",
     "@tuya-fe/ty-steps": "^3.0.0",
