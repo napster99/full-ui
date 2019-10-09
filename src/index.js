@@ -353,7 +353,6 @@ export default {
   TyInput,
   TyRenderForm,
   TyNavTag,
-  TyDraggableBoard,
   TyDragLocation,
   TyEditTable,
   TyImagePreview,
