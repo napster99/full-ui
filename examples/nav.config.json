@@ -354,6 +354,14 @@
             {
               "path": "/ty-nav-tag",
               "title": "TyNavTag 导航标签"
+            },
+            {
+              "path": "/ty-modal",
+              "title": "TyModal 业务弹窗"
+            },
+            {
+              "path": "/ty-zsy",
+              "title": "TyZsy"
             }
           ]
         },

@@ -105,6 +105,7 @@ import TyEditTable from '@tuya-fe/ty-edit-table';
 import TyDragLocation from '@tuya-fe/ty-drag-location';
 import TyMessageBox from '@tuya-fe/ty-message-box';
 import TyImagePreview from '../packages/ty-image-preview';
+import TyModal from '@tuya-fe/ty-modal';
 
 const components = [
   Pagination,
@@ -204,7 +205,8 @@ const components = [
   TyDraggableBoard,
   CollapseTransition,
   TyEditTable,
-  TyImagePreview
+  TyImagePreview,
+  TyModal
 ];
 
 const install = function(Vue, opts = {}) {
@@ -354,5 +356,7 @@ export default {
   TyDraggableBoard,
   TyDragLocation,
   TyEditTable,
-  TyImagePreview
+  TyImagePreview,
+  TyDraggableBoard,
+  TyModal
 };
