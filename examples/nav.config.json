@@ -303,6 +303,10 @@
           "groupName": "公共组件",
           "list": [
             {
+              "path": "/ty-async-button",
+              "title": "TyAsyncButton 异步按钮"
+            },
+            {
               "path": "/ty-render-table",
               "title": "TyRenderTable 表格"
             },

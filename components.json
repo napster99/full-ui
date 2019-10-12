@@ -96,5 +96,6 @@
   "ty-draggable-board": "./packages/ty-draggable-board/index.js",
   "ty-steps": "./packages/ty-steps/index.js",
   "ty-multiple-input": "./packages/ty-multiple-input/index.js",
-  "ty-image-preview": "./packages/ty-image-preview/index.js"
+  "ty-image-preview": "./packages/ty-image-preview/index.js",
+  "ty-async-button": "@tuya-fe/ty-async-button"
 }

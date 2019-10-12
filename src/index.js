@@ -106,8 +106,10 @@ import TyDragLocation from '@tuya-fe/ty-drag-location';
 import TyMessageBox from '@tuya-fe/ty-message-box';
 import TyImagePreview from '../packages/ty-image-preview';
 import TyModal from '@tuya-fe/ty-modal';
+import TyAsyncButton from '@tuya-fe/ty-async-button';
 
 const components = [
+  TyAsyncButton,
   Pagination,
   Dialog,
   Autocomplete,
@@ -250,6 +252,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
+  TyAsyncButton,
   version: '1.1.0',
   locale: locale.use,
   i18n: locale.i18n,
