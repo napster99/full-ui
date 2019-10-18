@@ -52,10 +52,10 @@
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
 
-"@tuya-fe/ty-drag-location@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-drag-location/download/@tuya-fe/ty-drag-location-1.0.0.tgz#9a79204893a870abf8acef4337a4c4428f79b635"
-  integrity sha1-mnkgSJOocKv4rO9DN6TEQo95tjU=
+"@tuya-fe/ty-drag-location@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry-npm.tuya-inc.top/@tuya-fe/ty-drag-location/download/@tuya-fe/ty-drag-location-1.0.1.tgz#1abeea6106621cfc5e15c902b4b31f2404a6c614"
+  integrity sha1-Gr7qYQZiHPxeFckCtLMfJASmxhQ=
   dependencies:
     "@tuya-fe/full-ui" "^1.1.0"
     vue "^2.5.11"
