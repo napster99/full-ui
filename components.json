@@ -91,10 +91,11 @@
   "ty-test-process-zty": "./packages/ty-test-process-zty/index.js",
   "ty-jiangxc": "./packages/ty-jiangxc/index.js",
   "ty-xk": "./packages/ty-xk/index.js",
-  "ty-zsy": "./packages/ty-zsy/index.js",
   "ty-input": "./packages/ty-input/index.js",
   "ty-render-form": "./packages/ty-render-form/index.js",
   "ty-draggable-board": "./packages/ty-draggable-board/index.js",
   "ty-steps": "./packages/ty-steps/index.js",
-  "ty-multiple-input": "./packages/ty-multiple-input/index.js"
+  "ty-multiple-input": "./packages/ty-multiple-input/index.js",
+  "ty-image-preview": "./packages/ty-image-preview/index.js",
+  "ty-async-button": "@tuya-fe/ty-async-button"
 }

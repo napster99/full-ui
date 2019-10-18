@@ -94,9 +94,9 @@ import TyTable from '../packages/ty-table/index.js';
 import TyTestProcessZty from '../packages/ty-test-process-zty/index.js';
 import TyJiangxc from '../packages/ty-jiangxc/index.js';
 import TyXk from '../packages/ty-xk/index.js';
-import TyZsy from '../packages/ty-zsy/index.js';
 import TyInput from '../packages/ty-input/index.js';
 import TyRenderForm from '../packages/ty-render-form/index.js';
+import TyNavTag from '@tuya-fe/ty-nav-tag';
 import TyDraggableBoard from '@tuya-fe/ty-draggable-board';
 import locale from 'full-ui/src/locale';
 import CollapseTransition from 'full-ui/src/transitions/collapse-transition';
@@ -104,8 +104,12 @@ import TyDetailForm from '@tuya-fe/ty-detail-form';
 import TyEditTable from '@tuya-fe/ty-edit-table';
 import TyDragLocation from '@tuya-fe/ty-drag-location';
 import TyMessageBox from '@tuya-fe/ty-message-box';
+import TyImagePreview from '../packages/ty-image-preview';
+import TyModal from '@tuya-fe/ty-modal';
+import TyAsyncButton from '@tuya-fe/ty-async-button';
 
 const components = [
+  TyAsyncButton,
   Pagination,
   Dialog,
   Autocomplete,
@@ -196,13 +200,15 @@ const components = [
   TyJiangxc,
   TyDetailForm,
   TyXk,
-  TyZsy,
   TyDragLocation,
   TyInput,
   TyRenderForm,
+  TyNavTag,
   TyDraggableBoard,
   CollapseTransition,
-  TyEditTable
+  TyEditTable,
+  TyImagePreview,
+  TyModal
 ];
 
 const install = function(Vue, opts = {}) {
@@ -246,6 +252,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
+  TyAsyncButton,
   version: '1.1.0',
   locale: locale.use,
   i18n: locale.i18n,
@@ -346,10 +353,12 @@ export default {
   TyDetailForm,
   TyJiangxc,
   TyXk,
-  TyZsy,
   TyInput,
   TyRenderForm,
-  TyDraggableBoard,
+  TyNavTag,
   TyDragLocation,
-  TyEditTable
+  TyEditTable,
+  TyImagePreview,
+  TyDraggableBoard,
+  TyModal
 };

@@ -1,14 +1,14 @@
 import { createTest, destroyVM } from '../util';
-import TyZsy from 'packages/ty-zsy';
+import TyImagePreview from 'packages/ty-image-preview';
 
-describe('TyZsy', () => {
+describe('TyImagePreview', () => {
   let vm;
   afterEach(() => {
     destroyVM(vm);
   });
 
   it('create', () => {
-    vm = createTest(TyZsy, true);
+    vm = createTest(TyImagePreview, true);
     expect(vm.$el).to.exist;
   });
 });

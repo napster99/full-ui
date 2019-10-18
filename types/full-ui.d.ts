@@ -12,12 +12,13 @@ import { TySearchList } from './ty-search-list';
 import { TyTestProcessZty } from './ty-test-process-zty';
 import { TyJiangxc } from './ty-jiangxc';
 import { TyXk } from './ty-xk';
-import { TyZsy } from './ty-zsy';
 import { TyInput } from './ty-input';
 import { TyRenderForm } from './ty-render-form'
 import { TyDraggableBoard } from './ty-draggable-board'
 import { TySteps } from './ty-steps'
 import { TyMultipleInput } from './ty-multiple-input'
+import { TyImagePreview } from './ty-image-preview'
+import { TyNavTag } from './ty-nav-tag'
 
 export class Searchform extends ElSearchform {}
 
@@ -54,9 +55,6 @@ export class TyJiangxc extends TyJiangxc {}
 /** TyXk Component */
 export class TyXk extends TyXk {}
 
-/** TyZsy Component */
-export class TyZsy extends TyZsy {}
-
 /** TyInput Component */
 export class TyInput extends TyInput {}
 
@@ -71,3 +69,9 @@ export class TySteps extends TySteps {}
 
 /** TyMultipleInput Component */
 export class TyMultipleInput extends TyMultipleInput {}
+
+/** TyImagePreview Component */
+export class TyImagePreview extends TyImagePreview {}
+
+/** TyNavTag Component */
+export class TyNavTag extends TyNavTag {}
