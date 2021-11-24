@@ -44,10 +44,6 @@
       ]
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@code.registry.wgine.com:10023/TuyaFE-backendSupport/full-ui.git"
-  },
   "homepage": "http://www.full-ui.com/",
   "keywords": [
     "full",
